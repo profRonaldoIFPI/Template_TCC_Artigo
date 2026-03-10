@@ -22,10 +22,10 @@ echo " Arquivo de saída planejado: $NOME_ARQUIVO"
 echo "=========================================================="
 
 # Comando de compilação (rodando várias vezes para fechar referências)
-pdflatex main.tex
+pdflatex -interaction=nonstopmode main.tex
 bibtex main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
 
 echo "=========================================================="
 # Verifica se a compilação gerou o main.pdf com sucesso

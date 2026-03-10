@@ -11,6 +11,21 @@ Template preparado para artigos científicos apresentados como Trabalhos de Conc
 - **Pronto para uso**: estrutura completa com exemplos comentados.
 - **Idioma padrão**: português do Brasil (babel `brazil`).
 
+## Requisitos e Recomendações
+
+Para utilizar este template e compilar o documento de forma adequada, você precisará dos seguintes softwares e pacotes instalados em seu computador:
+
+- **Distribuição LaTeX**: Recomendamos o [TeX Live](https://www.tug.org/texlive/) (Linux/Windows) ou [MacTeX](https://www.tug.org/mactex/) (macOS).
+- **Pacotes LaTeX Essenciais**: `abntex2`, `babel`, `microtype`, `enumitem`, `graphicx`, `hyperref`, entre outros. Em distribuições Linux baseadas no Debian/Ubuntu, você pode instalar os pacotes essenciais com:
+  ```bash
+  sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-lang-portuguese texlive-publishers texlive-bibtex-extra
+  ```
+- **Editor LaTeX (Opcional)**: Automações visuais podem ser obtidas com [VS Code](https://code.visualstudio.com/) (usando a extensão *LaTeX Workshop*), [TeXstudio](https://www.texstudio.org/) ou [Texmaker](https://www.xm1math.net/texmaker/).
+
+> [!IMPORTANT]
+> **Recomendação de Uso Offline (Local)**:
+> Embora seja possível utilizar plataformas online como o **Overleaf**, recomendamos fortemente o download e **configuração local** do repositório. Editores online frequentemente impõem **limites de tempo de compilação** ("timeout") e restrição de funcionalidades em seus planos gratuitos (*Free*), o que pode causar travamentos durante o processo de geração do PDF devido à complexidade da classe `abntex2` e o processamento de imagens e bibliografias do seu trabalho de conclusão.
+
 ## Como usar
 
 ### 1. Personalização dos dados

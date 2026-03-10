@@ -113,6 +113,40 @@
 \newcommand{\@grau}{}
 
 % ========================================================================
+% COMANDOS NOVOS PARA ARTIGO TCC
+% ========================================================================
+
+% Comando para definir o subtítulo
+\newcommand{\subtitulo}[1]{\def\@subtitulo{#1}}
+\newcommand{\@subtitulo}{}
+
+% Comando para e-mail do autor
+\newcommand{\emailautor}[1]{\def\@emailautor{#1}}
+\newcommand{\@emailautor}{}
+
+% Comandos para e-mail e vínculo do orientador
+\newcommand{\emailorientador}[1]{\def\@emailorientador{#1}}
+\newcommand{\@emailorientador}{}
+\newcommand{\vinculoorientador}[1]{\def\@vinculoorientador{#1}}
+\newcommand{\@vinculoorientador}{}
+
+% Comandos para e-mail e vínculo do coorientador
+\newcommand{\emailcoorientador}[1]{\def\@emailcoorientador{#1}}
+\newcommand{\@emailcoorientador}{}
+\newcommand{\vinculocoorientador}[1]{\def\@vinculocoorientador{#1}}
+\newcommand{\@vinculocoorientador}{}
+
+% Comando para data de aprovação
+\newcommand{\dataaprovacao}[1]{\def\@dataaprovacao{#1}}
+\newcommand{\@dataaprovacao}{}
+
+% Palavras-chave em portugues e ingles
+\newcommand{\palavraschave}[1]{\def\@palavraschave{#1}}
+\newcommand{\@palavraschave}{}
+\newcommand{\keywords}[1]{\def\@keywords{#1}}
+\newcommand{\@keywords}{}
+
+% ========================================================================
 % PERSONALIZAÇÃO DA CAPA
 % ========================================================================
 
@@ -162,10 +196,51 @@
 }
 
 % ========================================================================
-% PERSONALIZAÇÃO DA FOLHA DE ROSTO
+% PERSONALIZAÇÃO DA FOLHA DE ROSTO E CABEÇALHO DO ARTIGO
 % ========================================================================
 
 \makeatletter
+
+% Cabeçalho do Artigo (impresso após a folha de rosto)
+\newcommand{\imprimircabecalhoartigo}{
+    \begin{center}
+        \vspace*{2cm}
+        {\ABNTEXchapterfont\bfseries\Large\MakeUppercase{\imprimirtitulo}}
+        
+        \ifx\@subtitulo\empty\else
+            {\ABNTEXchapterfont\bfseries\large\MakeUppercase{: \@subtitulo}}
+        \fi
+        
+        \vspace{1.5cm}
+        
+        \begin{flushright}
+            {\normalsize\imprimirautor\footnote{\@emailautor}}
+            
+            \ifx\imprimirorientador\empty\else
+                {\normalsize\imprimirorientador\footnote{\@vinculoorientador. E-mail: \@emailorientador}}
+            \fi
+            
+            \ifx\imprimircoorientador\empty\else
+                {\normalsize\imprimircoorientador\footnote{\@vinculocoorientador. E-mail: \@emailcoorientador}}
+            \fi
+        \end{flushright}
+        
+        \vspace{1cm}
+    \end{center}
+}
+
+% Redefinição de resumo para artigo (sem quebra de página)
+\renewenvironment{resumo}[1][\resumoname]{%
+   % \begin{center}\ABNTEXchapterfont\bfseries\MakeUppercase{#1}\end{center}
+   \vspace{\onelineskip}
+   \noindent\textbf{\MakeUppercase{#1}}
+   \begin{SingleSpace}
+}{%
+   \end{SingleSpace}
+   \vspace{\onelineskip}
+}
+
+% Redefinição da folha de rosto
 \renewcommand{\folhaderostocontent}{
     \begin{center}
         % Nome do autor
@@ -175,6 +250,9 @@
         
         % Título
         {\ABNTEXchapterfont\bfseries\normalsize\MakeUppercase{\imprimirtitulo}}
+        \ifx\@subtitulo\empty\else
+            {\ABNTEXchapterfont\bfseries\normalsize\MakeUppercase{: \@subtitulo}}
+        \fi
         
         \vspace*{\fill}
         

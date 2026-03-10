@@ -1,15 +1,15 @@
-# Template LaTeX para Projetos de Pesquisa IFPI
+# Template LaTeX para TCC em formato de Artigo Científico - IFPI
 
-Template preparado para projetos de pesquisa do Instituto Federal do Piauí (IFPI), alinhado com as normas ABNT 2023 e com personalizações institucionais em português do Brasil.
+Template preparado para artigos científicos apresentados como Trabalhos de Conclusão de Curso (TCC) do Instituto Federal do Piauí (IFPI), alinhado com as normas ABNT e com o *Manual de Trabalhos Acadêmicos do IFPI (2024)*.
 
 ## Características
 
 - **Base**: classe `abntex2` atualizada
-- **Normas atendidas**: NBR 14724, 6024, 6027, 10520, 6023, 15287 (versões vigentes)
-- **Formatação padrão**: margens 3 cm/2 cm, Times New Roman 12 pt, espaçamento 1,5
-- **Personalização**: capa, folha de rosto e comandos específicos do IFPI
-- **Pronto para uso**: estrutura completa com exemplos comentados
-- **Idioma padrão**: português do Brasil (babel `brazil`)
+- **Normas atendidas**: NBR 6022:2018 (Artigo Científico), 10520:2023, 6024, 6027, 6023 (versões vigentes) e Manual TCC IFPI.
+- **Formatação padrão**: margens 3 cm/2 cm, Arial/Times New Roman 12 pt, espaçamento simples.
+- **Personalização**: folha de rosto, cabeçalho de artigo e comandos específicos do IFPI.
+- **Pronto para uso**: estrutura completa com exemplos comentados.
+- **Idioma padrão**: português do Brasil (babel `brazil`).
 
 ## Como usar
 
@@ -18,15 +18,13 @@ Template preparado para projetos de pesquisa do Instituto Federal do Piauí (IFP
 Edite o arquivo `estrutura/dados.tex` e ajuste os campos:
 
 ```latex
-% Dados do projeto (estrutura/dados.tex)
+% Dados do artigo (estrutura/dados.tex)
 \titulo{SEU TÍTULO AQUI}
 \autor{SEU NOME COMPLETO}
+\emailautor{seuemail@aluno.ifpi.edu.br}
 \orientador{Prof. Dr. Nome do Orientador}
-\coorientador{Prof. Dr. Nome do Coorientador} % Opcional
-\curso{Nome do Curso}
-\campus{Campus IFPI}
-\local{Cidade - Estado}
-\data{Ano}
+\emailorientador{orientador@ifpi.edu.br}
+% ...outros dados institucionais e de data
 ```
 
 Para ajustes de pacotes e de formatação geral, utilize `config/config.tex`.
@@ -40,8 +38,6 @@ config/
     abntex-ifpi.sty    # Personalizações IFPI
 estrutura/
     dados.tex          # Dados do projeto de pesquisa
-    pre_textuais.tex   # Elementos pré-textuais
-    pos_textuais.tex   # Elementos pós-textuais
 img/                   # Imagens do documento
 referencias.bib        # Bibliografia
 README.md              # Este arquivo
@@ -49,7 +45,13 @@ README.md              # Este arquivo
 
 ### 3. Compilação
 
-Execute a sequência completa abaixo para gerar o PDF com referências atualizadas:
+Para compilar o documento e automaticamente gerar um PDF com o nome `Título - Autor - Ano.pdf`, você pode usar o script incluso no terminal (Linux/macOS):
+
+```bash
+./gerar_pdf.sh
+```
+
+Ou, se preferir compilar manualmente (o arquivo sairá como `main.pdf`):
 
 ```bash
 pdflatex main.tex
@@ -60,31 +62,31 @@ pdflatex main.tex
 
 ## Conteúdo do template
 
-### Elementos pré-textuais
+### Elementos pré-textuais e Cabeçalho
 - Capa institucional IFPI
 - Folha de rosto
-- Resumo (português) e abstract (inglês)
-- Listas automáticas: figuras, tabelas, abreviaturas, símbolos
-- Sumário automático
+- Cabeçalho do Artigo (Título, Autores, Instituição, E-mails)
+- Resumo (português) e Abstract (inglês) com palavras-chave
+- Data de aprovação
 
 ### Elementos textuais
-- Introdução (contexto, problema, justificativa)
-- Objetivos (geral e específicos)
-- Referencial teórico e estudos relacionados
-- Metodologia (modalidade, instrumentos, participantes, ética)
-- Resultados esperados
-- Cronograma e orçamento
+- Introdução
+- Referencial Teórico / Estudos Relacionados
+- Metodologia
+- Resultados e Discussões
+- Considerações Finais
 
 ### Elementos pós-textuais
-- Referências bibliográficas conforme ABNT 2023
-- Apêndices e anexos (opcionais)
+- Referências bibliográficas conforme ABNT NBR 6023:2018
+- Glossário (opcional)
+- Apêndices e Anexos (opcionais)
+- Agradecimentos (opcional)
 
 ## Recursos especiais
 
 - Comando `\inserirfigura{arquivo}{largura}{legenda}{label}` para figuras com fonte padronizada.
 - Comandos `\cite{}` e `\citeonline{}` já configurados para ABNT (pacote `abntex2cite`).  
 - Ajustes de metadados PDF automáticos (`config/config.tex` + `estrutura/dados.tex`).  
-- `preview-server.js` para servir o PDF localmente (`node preview-server.js`).
 
 ## Dicas rápidas
 

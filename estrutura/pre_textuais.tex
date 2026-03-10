@@ -1,221 +1,75 @@
 % ========================================================================
 % ELEMENTOS PRÉ-TEXTUAIS
-% Capa, folha de rosto, listas e sumário conforme ABNT NBR 14724:2011
+% Capa e folha de rosto conforme artigo TCC IFPI
 % ========================================================================
 
 % ========================================================================
-% CAPA
+% CAPA (Obrigatória em artigos do IFPI segundo o manual TCC)
 % ========================================================================
 \imprimircapa
 
 % ========================================================================
-% FOLHA DE ROSTO
+% FOLHA DE ROSTO (Obrigatória)
 % ========================================================================
 \imprimirfolhaderosto*
 
 % ========================================================================
-% FOLHA DE APROVAÇÃO (OPCIONAL)
+% AGRADECIMENTOS (OPCIONAL - EM ARTIGOS DEVE IR NO FINAL)
 % ========================================================================
-% Descomente as linhas abaixo se necessário incluir folha de aprovação
-% \begin{folhadeaprovacao}
-%     \begin{center}
-%         {\ABNTEXchapterfont\large\imprimirautor}
-%         
-%         \vspace*{\fill}\vspace*{\fill}
-%         
-%         {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
-%         
-%         \vspace*{\fill}
-%         
-%         \hspace{.45\textwidth}
-%         \begin{minipage}{.5\textwidth}
-%             \imprimirpreambulo
-%         \end{minipage}%
-%         
-%         \vspace*{\fill}
-%         
-%         Trabalho aprovado. \imprimirlocal, \imprimirdata:
-%         
-%         \vspace*{1cm}
-%         
-%         \assinatura{\textbf{\imprimirorientador} \\ Orientador}
-%         
-%         \assinatura{\textbf{Professor} \\ Convidado 1}
-%         
-%         \assinatura{\textbf{Professor} \\ Convidado 2}
-%         
-%         \vspace*{\fill}
-%         
-%         {\large\imprimirlocal}
-%         \par
-%         {\large\imprimirdata}
-%         \vspace*{1cm}
-%     \end{center}
-% \end{folhadeaprovacao}
+% O manual do IFPI diz que agradecimentos em artigos vão como elemento pós-textual,
+% portanto mude-os para o final do `main.tex` se for usar.
 
 % ========================================================================
-% DEDICATÓRIA (OPCIONAL)
+% CABEÇALHO DO ARTIGO (Título, autores, e-mails)
 % ========================================================================
-% Descomente e personalize se desejar incluir dedicatória
-% \begin{dedicatoria}
-%     \vspace*{\fill}
-%     \centering
-%     \noindent
-%     \textit{Dedico este trabalho aos meus pais, \\
-%     pelo apoio incondicional em todos os momentos.} \vspace*{\fill}
-% \end{dedicatoria}
+\imprimircabecalhoartigo
 
 % ========================================================================
-% AGRADECIMENTOS (OPCIONAL)
-% ========================================================================
-% Descomente e personalize se desejar incluir agradecimentos
-% \begin{agradecimentos}
-%     Agradeço primeiramente a Deus, por ter me dado força e determinação para concluir este trabalho.
-%     
-%     Ao meu orientador, Prof. Dr. [Nome], pela paciência, dedicação e conhecimentos transmitidos durante todo o processo de orientação.
-%     
-%     Aos professores do Instituto Federal do Piauí -- Campus Floriano, pelos ensinamentos e contribuições para minha formação acadêmica.
-%     
-%     Aos meus familiares e amigos, pelo apoio e compreensão durante esta jornada.
-%     
-%     A todos que, direta ou indiretamente, contribuíram para a realização deste trabalho.
-% \end{agradecimentos}
-
-% ========================================================================
-% EPÍGRAFE (OPCIONAL)
-% ========================================================================
-% Descomente e personalize se desejar incluir epígrafe
-% \begin{epigrafe}
-%     \vspace*{\fill}
-%     \begin{flushright}
-%         \textit{``A educação é a arma mais poderosa \\
-%         que você pode usar para mudar o mundo.''\\
-%         (Nelson Mandela)}
-%     \end{flushright}
-% \end{epigrafe}
-
-% ========================================================================
-% RESUMO EM PORTUGUÊS
+% RESUMO EM PORTUGUÊS E PALAVRAS-CHAVE
 % ========================================================================
 \setlength{\absparsep}{18pt} % Ajusta espaçamento entre parágrafos do resumo
 
 \begin{resumo}
-    Este projeto de pesquisa tem como objetivo [DESCREVER O OBJETIVO PRINCIPAL DA PESQUISA]. A metodologia utilizada baseia-se em [DESCREVER A METODOLOGIA: pesquisa bibliográfica, estudo de caso, pesquisa experimental, etc.]. Como referencial teórico, serão utilizados os trabalhos de [CITAR PRINCIPAIS AUTORES DA ÁREA]. A pesquisa justifica-se pela [APRESENTAR A JUSTIFICATIVA E RELEVÂNCIA DO TEMA]. Os resultados esperados incluem [DESCREVER OS RESULTADOS ESPERADOS]. Este estudo contribuirá para [APRESENTAR A CONTRIBUIÇÃO ESPERADA PARA A ÁREA DE CONHECIMENTO]. A pesquisa será desenvolvida no período de [PERÍODO DE EXECUÇÃO] e seguirá as normas éticas estabelecidas para pesquisas acadêmicas.
+    Este artigo científico tem como objetivo [DESCREVER O OBJETIVO PRINCIPAL DA PESQUISA]. A metodologia utilizada baseia-se em [DESCREVER A METODOLOGIA: pesquisa bibliográfica, estudo de caso, pesquisa experimental, etc.]. Como referencial teórico, serão utilizados os trabalhos de [CITAR PRINCIPAIS AUTORES DA ÁREA]. A pesquisa justifica-se pela [APRESENTAR A JUSTIFICATIVA E RELEVÂNCIA DO TEMA]. Os resultados incluem [DESCREVER OS RESULTADOS ALCANÇADOS]. Este estudo contribui para [APRESENTAR A CONTRIBUIÇÃO PARA A ÁREA DE CONHECIMENTO].
     
-    \textbf{Palavras-chave}: Palavra-chave 1. Palavra-chave 2. Palavra-chave 3. Palavra-chave 4. Palavra-chave 5.
+    \vspace{\onelineskip}
+    \noindent
+    \textbf{Palavras-chave}: Palavra-chave 1; Palavra-chave 2; Palavra-chave 3; Palavra-chave 4; Palavra-chave 5.
 \end{resumo}
 
 % ========================================================================
-% RESUMO EM INGLÊS (ABSTRACT)
+% RESUMO EM INGLÊS (ABSTRACT) E KEYWORDS
 % ========================================================================
 \begin{resumo}[ABSTRACT]
     \begin{otherlanguage*}{english}
-        This research project aims to [DESCRIBE THE MAIN OBJECTIVE OF THE RESEARCH]. The methodology used is based on [DESCRIBE THE METHODOLOGY: bibliographic research, case study, experimental research, etc.]. As theoretical framework, the works of [CITE MAIN AUTHORS IN THE FIELD] will be used. The research is justified by [PRESENT THE JUSTIFICATION AND RELEVANCE OF THE THEME]. Expected results include [DESCRIBE EXPECTED RESULTS]. This study will contribute to [PRESENT THE EXPECTED CONTRIBUTION TO THE KNOWLEDGE AREA]. The research will be developed in the period of [EXECUTION PERIOD] and will follow the ethical standards established for academic research.
+        This scientific article aims to [DESCRIBE THE MAIN OBJECTIVE OF THE RESEARCH]. The methodology used is based on [DESCRIBE THE METHODOLOGY: bibliographic research, case study, experimental research, etc.]. As theoretical framework, the works of [CITE MAIN AUTHORS IN THE FIELD] will be used. The research is justified by [PRESENT THE JUSTIFICATION AND RELEVANCE OF THE THEME]. Results include [DESCRIBE REACHED RESULTS]. This study contributes to [PRESENT THE CONTRIBUTION TO THE KNOWLEDGE AREA].
         
-        \textbf{Keywords}: Keyword 1. Keyword 2. Keyword 3. Keyword 4. Keyword 5.
+        \vspace{\onelineskip}
+        \noindent
+        \textbf{Keywords}: Keyword 1; Keyword 2; Keyword 3; Keyword 4; Keyword 5.
     \end{otherlanguage*}
 \end{resumo}
 
 % ========================================================================
-% LISTA DE ILUSTRAÇÕES
+% DATA DE APROVAÇÃO
 % ========================================================================
-% LISTA DE ILUSTRACOES
-% ========================================================================
-% A lista sera gerada automaticamente se houver figuras no documento
-\pdfbookmark[0]{\listfigurename}{lof}
-\begingroup
-  \makeatletter
-  \let\addvspace\@gobble
-  \makeatother
-  \listoffigures*
-\endgroup
-\cleardoublepage  % quebra de página
+\vspace{\onelineskip}
+\noindent
+Data de aprovação: \@dataaprovacao
 
-% ========================================================================
-% LISTA DE TABELAS
-% ========================================================================
-% A lista sera gerada automaticamente se houver tabelas no documento
-\pdfbookmark[0]{\listtablename}{lot}
-\begingroup
-  \makeatletter
-  \let\addvspace\@gobble
-  \makeatother
-  \listoftables*
-\endgroup
-\cleardoublepage
-
-% ========================================================================
-% LISTA DE ABREVIATURAS E SIGLAS
-% ========================================================================
-% Descomente e adicione as abreviaturas utilizadas no trabalho
-% \begin{siglas}
-%     \item[ABNT] Associação Brasileira de Normas Técnicas
-%     \item[IFPI] Instituto Federal de Educação, Ciência e Tecnologia do Piauí
-%     \item[NBR] Norma Brasileira
-%     \item[PDF] Portable Document Format
-%     \item[TCC] Trabalho de Conclusão de Curso
-%     % Adicione outras siglas conforme necessário
-%     % \item[SIGLA] Significado da sigla
-% \end{siglas}
-
-% ========================================================================
-% LISTA DE SÍMBOLOS
-% ========================================================================
-% Descomente e adicione os símbolos utilizados no trabalho
-% \begin{simbolos}
-%     \item[$ \Gamma $] Letra grega Gama
-%     \item[$ \Lambda $] Lambda
-%     \item[$ \zeta $] Letra grega minúscula zeta
-%     \item[$ \in $] Pertence
-%     % Adicione outros símbolos conforme necessário
-% \end{simbolos}
-
-% ========================================================================
-% SUMÁRIO
-% ========================================================================
-\pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
-% \cleardoublepage
+\vspace{1cm}
 
 % ========================================================================
 % CONFIGURAÇÕES PARA INÍCIO DO TEXTO
 % ========================================================================
-% Configura numeração de páginas para o texto principal
-\textual
+% Impede quebra de página padrão do abntex2 após pré-textuais
+\makeatletter
+\renewcommand{\textual}{%
+  \pagestyle{ifpihead}
+  \aliaspagestyle{chapter}{ifpihead}
+  \nouppercaseheads
+  \bookmarksetup{startatroot}
+}
+\makeatother
 
-% ========================================================================
-% INSTRUÇÕES PARA PERSONALIZAÇÃO
-% ========================================================================
-%
-% COMO PERSONALIZAR ESTE ARQUIVO:
-%
-% 1. RESUMO: Substitua o texto de exemplo pelo resumo real do seu projeto
-%    - Máximo de 500 palavras
-%    - Deve conter: objetivo, metodologia, resultados esperados
-%    - Inclua 3-5 palavras-chave relevantes
-%
-% 2. ABSTRACT: Traduza o resumo para o inglês
-%    - Mantenha a mesma estrutura do resumo em português
-%    - Use keywords correspondentes às palavras-chave
-%
-% 3. LISTAS AUTOMÁTICAS:
-%    - Lista de figuras: gerada automaticamente quando há figuras
-%    - Lista de tabelas: gerada automaticamente quando há tabelas
-%    - Para não aparecer listas vazias, comente as linhas correspondentes
-%
-% 4. LISTA DE SIGLAS:
-%    - Adicione todas as siglas utilizadas no trabalho
-%    - Mantenha ordem alfabética
-%    - Use o formato: \item[SIGLA] Significado completo
-%
-% 5. ELEMENTOS OPCIONAIS:
-%    - Dedicatória: descomente e personalize se desejar
-%    - Agradecimentos: descomente e personalize se desejar
-%    - Epígrafe: descomente e personalize se desejar
-%    - Folha de aprovação: descomente se necessário
-%
-% 6. LISTA DE SÍMBOLOS:
-%    - Descomente se o trabalho utilizar símbolos matemáticos
-%    - Adicione os símbolos na ordem de aparição no texto
-%
-% ========================================================================
+\textual

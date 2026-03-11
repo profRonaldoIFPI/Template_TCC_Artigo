@@ -22,7 +22,7 @@ Para utilizar este template e compilar o documento de forma adequada, você prec
   ```
 - **Editor LaTeX (Opcional)**: Automações visuais podem ser obtidas com [VS Code](https://code.visualstudio.com/) (usando a extensão *LaTeX Workshop*), [TeXstudio](https://www.texstudio.org/) ou [Texmaker](https://www.xm1math.net/texmaker/).
 
-> [!IMPORTANT]
+> [!IMPORTANTE]
 > **Recomendação de Uso Offline (Local)**:
 > Embora seja possível utilizar plataformas online como o **Overleaf**, recomendamos fortemente o download e **configuração local** do repositório. Editores online frequentemente impõem **limites de tempo de compilação** ("timeout") e restrição de funcionalidades em seus planos gratuitos (*Free*), o que pode causar travamentos durante o processo de geração do PDF devido à complexidade da classe `abntex2` e o processamento de imagens e bibliografias do seu trabalho de conclusão.
 
@@ -58,7 +58,53 @@ referencias.bib        # Bibliografia
 README.md              # Este arquivo
 ```
 
-### 3. Compilação
+### 3. Referências e Citações (ABNT NBR 10520:2023)
+
+O template já está configurado para atender à atualização da norma **ABNT NBR 10520:2023**, que determina o fim do uso de CAIXA ALTA para a chamada de autores dentro dos parênteses no corpo do texto (ex: (Borges, 2025)).
+
+Para que isso funcione corretamente, você deve registrar as entradas no arquivo `referencias.bib` com a **capitalização natural** das palavras. O template (`config/abntex-ifpi.sty`) cuidará de formatar as citações no texto apenas com a primeira letra maiúscula, enquanto manterá a lista de referências ao final do documento em CAIXA ALTA.
+
+Veja como registrar os autores no `.bib`:
+
+- **Nomes de pessoas**: Registre normalmente, apenas com a primeira letra maiúscula.
+  ```bibtex
+  @book{borges2025,
+      author = {Borges, Ronaldo},
+      title = {Título da Obra...}
+  }
+  ```
+- **Obras de Instituições/Organizações**: **Não use o campo `author`** com chaves duplas `{{}}`. Isso impede que o BibTeX mude a capitalização do nome nas Referências.
+  Em vez disso, utilize o campo `organization` com a capitalização natural. Se a organização for mais conhecida por uma sigla e você quiser citá-la assim no texto, adicione o campo `org-short`. O pacote `abntex2cite` fará automaticamente a formatação Normal no texto e CAIXA ALTA nas referências!
+
+  **Exemplo com sigla:**
+  ```bibtex
+  @manual{ibge2025,
+      organization = {Instituto Brasileiro de Geografia e Estatística},
+      org-short = {IBGE},
+      title = {Normas...}
+  }
+  ```
+  *(No texto ficará: **IBGE (2025)**. Nas Referências: **INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Normas... (2025).**)*
+
+  **Exemplo por extenso:**
+  ```bibtex
+  @manual{onu2025,
+      organization = {Organização das Nações Unidas},
+      title = {Relatório...}
+  }
+  ```
+  *(No texto ficará: **Organização das Nações Unidas (2025)**. Nas Referências: **ORGANIZAÇÃO DAS NAÇÕES UNIDAS. Relatório... (2025).**)*
+
+> **Atenção para Acentuação em Organizações**: O BibTeX (motor que gera as referências) tem uma limitação histórica com caracteres especiais em UTF-8 (como á, ç, ã) quando precisa convertê-los automaticamente para CAIXA ALTA no campo `organization`. Para evitar que a letra acentuada "desapareça" ou fique deformada na lista de referências, você deve proteger a letra acentuada usando comandos do LaTeX. 
+> - Em vez de `ç` use `{\c c}` 
+> - Em vez de `ã` use `{\~a}`
+> - Em vez de `á` use `{\'a}`
+> - Em vez de `é` use `{\'e}`
+> - Em vez de `í` use `{\'i}`
+>
+> *(Ex: `organization = {Associa{\c c}{\~a}o Brasileira de Normas T{\'e}cnicas}`)*
+
+### 4. Compilação
 
 Para compilar o documento e automaticamente gerar um PDF com o nome `Título - Autor - Ano.pdf`, você pode usar o script incluso no terminal (Linux/macOS):
 
@@ -74,6 +120,8 @@ bibtex main
 pdflatex main.tex
 pdflatex main.tex
 ```
+
+
 
 ## Conteúdo do template
 

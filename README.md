@@ -147,7 +147,6 @@ pdflatex main.tex
 
 ## Recursos especiais
 
-- Comando `\inserirfigura{arquivo}{largura}{legenda}{label}` para figuras com fonte padronizada.
 - Comandos `\cite{}` e `\citeonline{}` já configurados para ABNT (pacote `abntex2cite`).  
 - Ajustes de metadados PDF automáticos (`config/config.tex` + `estrutura/dados.tex`).  
 

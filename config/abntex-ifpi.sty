@@ -332,35 +332,37 @@
 \makeatother
 
 \makeatletter
+\AtBeginDocument{
 % \cite opcionalmente aceita página/nota em #1, e chaves em #2 (lista separada por vírgulas)
-\renewcommand{\cite}[2][]{%
+\DeclareRobustCommand{\cite}[2][]{%
   \begingroup
     \def\abntifpi@opt{#1}% opcional: página/nota (ex.: p.~10)
     \def\abntifpi@list{#2}% lista de chaves
-    \abntifpi@cite@split\abntifpi@list,\@nil
+    (%
+    \expandafter\abntifpi@cite@split\abntifpi@list,\@nil
+    \if\relax\expandafter\detokenize\expandafter{\abntifpi@opt}\relax\else
+      , \abntifpi@opt
+    \fi
+    )%
   \endgroup
+}
 }
 
 % Divide lista de chaves por vírgula e insere separador "; "
 \def\abntifpi@cite@split#1,#2\@nil{%
-  \abntifpi@cite@one{#1}{\abntifpi@opt}%
+  \abntifpi@cite@one{#1}%
   \ifx\relax#2\relax
   \else
-    ;\space \abntifpi@cite@split#2\@nil
+    ; \abntifpi@cite@split#2\@nil
   \fi
 }
 
-% Citação individual no formato (Autor, ano[, opcional]) usando forma EXPL e \citeyear
-\def\abntifpi@cite@one#1#2{%
+% Citação individual no formato Autor, ano usando forma EXPL e \citeyear
+\def\abntifpi@cite@one#1{%
   \begingroup
     \def\abntifpi@a{\ABNTIFPI@AuthorExpl{#1}}% autor com capitalização correta (não CAIXA ALTA)
     \def\abntifpi@y{\citeyear{#1}}% ano
-    % Testa argumento opcional vazio após expansão
-    \if\relax\expandafter\detokenize\expandafter{#2}\relax
-      (\abntifpi@a, \abntifpi@y)%
-    \else
-      (\abntifpi@a, \abntifpi@y, #2)%
-    \fi
+    \abntifpi@a, \abntifpi@y
   \endgroup
 }
 

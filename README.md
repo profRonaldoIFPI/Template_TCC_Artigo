@@ -28,6 +28,22 @@ Para utilizar este template e compilar o documento de forma adequada, você prec
 
 ## Como usar
 
+Você pode utilizar este template de duas formas: localmente em seu computador ou através da plataforma online Overleaf.
+
+### Modo 1: Uso Local (Recomendado)
+Para o uso local, você precisará de uma distribuição LaTeX (como TeX Live, MacTeX ou mesmo com VSCode e extenções LaTeX) instalada em seu sistema. Para compilar, você pode utilizar o terminal ou um editor de sua preferência (como VS Code, TeXstudio, Texmaker, etc.). Veja a seção "Requisitos e Recomendações" acima para detalhes de instalação.
+
+### Modo 2: Uso via Overleaf
+Caso prefira não instalar o LaTeX em sua máquina, você pode usar o Overleaf:
+1. Baixe este repositório como um arquivo `.zip` (através do botão *Code* > *Download ZIP* no GitHub).
+2. Acesse o [Overleaf](https://www.overleaf.com/) e faça login.
+3. Clique em **New Project** > **Upload Project**.
+4. Faça o upload do arquivo `.zip` baixado.
+5. O Overleaf reconhecerá o arquivo `main.tex` e você poderá começar a editar!
+*(Atenção: Contas gratuitas do Overleaf podem sofrer com limites de tempo de compilação)*
+
+---
+
 ### 1. Personalização dos dados
 
 Edite o arquivo `estrutura/dados.tex` e ajuste os campos:
@@ -35,10 +51,23 @@ Edite o arquivo `estrutura/dados.tex` e ajuste os campos:
 ```latex
 % Dados do artigo (estrutura/dados.tex)
 \titulo{SEU TÍTULO AQUI}
+\subtitulo{SUBTÍTULO SE HOUVER}
+
+% Autoria
 \autor{SEU NOME COMPLETO}
 \emailautor{seuemail@aluno.ifpi.edu.br}
+\vinculoautor{IFPI -- Campus Floriano}
+
+% Orientação
 \orientador{Prof. Dr. Nome do Orientador}
 \emailorientador{orientador@ifpi.edu.br}
+\vinculoorientador{IFPI -- Campus Floriano}
+
+% Coorientação (deixe vazio se não houver coorientador)
+\coorientador{}
+\emailcoorientador{}
+\vinculocoorientador{}
+
 % ...outros dados institucionais e de data
 ```
 

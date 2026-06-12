@@ -123,6 +123,8 @@
 % Comando para e-mail do autor
 \newcommand{\emailautor}[1]{\def\@emailautor{#1}}
 \newcommand{\@emailautor}{}
+\newcommand{\vinculoautor}[1]{\def\@vinculoautor{#1}}
+\newcommand{\@vinculoautor}{}
 
 % Comandos para e-mail e vínculo do orientador
 \newcommand{\emailorientador}[1]{\def\@emailorientador{#1}}
@@ -135,6 +137,9 @@
 \newcommand{\@emailcoorientador}{}
 \newcommand{\vinculocoorientador}[1]{\def\@vinculocoorientador{#1}}
 \newcommand{\@vinculocoorientador}{}
+
+\providecommand{\@orientador}{}
+\providecommand{\@coorientador}{}
 
 % Comando para data de aprovação
 \newcommand{\dataaprovacao}[1]{\def\@dataaprovacao{#1}}
@@ -201,39 +206,47 @@
 
 \makeatletter
 
+% Auxiliar para verificar se uma macro está vazia de forma robusta (independente de ser \long ou não)
+\newcommand{\ifvazia}[3]{%
+  \if\relax\detokenize\expandafter{#1}\relax
+    #2%
+  \else
+    #3%
+  \fi
+}
+
 % Cabeçalho do Artigo (impresso após a folha de rosto)
 \newcommand{\imprimircabecalhoartigo}{
     \begin{center}
         \vspace*{2cm}
         {\ABNTEXchapterfont\bfseries\Large\MakeUppercase{\imprimirtitulo}}
         
-        \ifx\@subtitulo\empty\else
-            {\ABNTEXchapterfont\bfseries\large\MakeUppercase{: \@subtitulo}}
-        \fi
+        \ifvazia{\@subtitulo}{}{%
+            {\ABNTEXchapterfont\bfseries\large\MakeUppercase{: \@subtitulo}}%
+        }%
         
         \vspace{1.5cm}
         
         \begin{flushright}
-            {\normalsize\imprimirautor\footnote{\@emailautor}}
+            {\normalsize\imprimirautor\footnote{\ifvazia{\@vinculoautor}{}{\@vinculoautor. }E-mail: \@emailautor}}
             
-            \ifx\imprimirorientador\empty\else
-                {\normalsize\imprimirorientador\footnote{\@vinculoorientador. E-mail: \@emailorientador}}
-            \fi
+            \ifvazia{\imprimirorientador}{}{%
+                {\normalsize\imprimirorientador\footnote{\@vinculoorientador. E-mail: \@emailorientador}}%
+            }%
             
-            \ifx\imprimircoorientador\empty\else
-                {\normalsize\imprimircoorientador\footnote{\@vinculocoorientador. E-mail: \@emailcoorientador}}
-            \fi
+            \ifvazia{\imprimircoorientador}{}{%
+                {\normalsize\imprimircoorientador\footnote{\@vinculocoorientador. E-mail: \@emailcoorientador}}%
+            }%
         \end{flushright}
         
         \vspace{1cm}
     \end{center}
 }
 
-% Redefinição de resumo para artigo (sem quebra de página)
+% Redefinição de resumo para artigo (com título centralizado)
 \renewenvironment{resumo}[1][\resumoname]{%
-   % \begin{center}\ABNTEXchapterfont\bfseries\MakeUppercase{#1}\end{center}
+   \begin{center}\ABNTEXchapterfont\bfseries\MakeUppercase{#1}\end{center}
    \vspace{\onelineskip}
-   \noindent\textbf{\MakeUppercase{#1}}
    \begin{SingleSpace}
 }{%
    \end{SingleSpace}
@@ -250,7 +263,7 @@
         
         % Título
         {\ABNTEXchapterfont\bfseries\normalsize\MakeUppercase{\imprimirtitulo}}
-        \ifx\@subtitulo\empty\else
+        \ifx\@subtitulo\@empty\else
             {\ABNTEXchapterfont\bfseries\normalsize\MakeUppercase{: \@subtitulo}}
         \fi
         
@@ -268,12 +281,12 @@
                     Área de concentração: \@areaconcentracao
                 \fi
                 
-                \ifx\imprimirorientador\empty\else
+                \ifvazia{\imprimirorientador}{}{%
                     \vspace{0.5cm}
                     Orientador: \imprimirorientador
-                \fi
+                }%
                 
-                \abntex@ifnotempty{\imprimircoorientador}{%
+                \ifvazia{\imprimircoorientador}{}{%
                     \vspace{0.5cm}
                     Coorientador: \imprimircoorientador
                 }%

@@ -165,16 +165,16 @@ A \textbf{tabela} é uma forma não discursiva de apresentação de informaçõe
 
 \begin{table}[htbp] %"table" é o ambiente padrão do LaTeX para tabelas.
     \centering
-    \caption{Exemplo de tabela }
+    \caption{Exemplo de tabela}
     \label{tab:estudos}
     \begin{tabular}{p{4cm}cc}
-        \hline
+        \toprule
         \textbf{Estudo} & \textbf{Amostra} & \textbf{Métrica principal} \\ %\\ indica quebra de linha
-        \hline\hline %Linha dupla para separar o cabeçalho do conteúdo
+        \midrule
         Costa e Rocha (2023) & 120 respondentes & Média de adoção = 4,1 \\
         Silva e Santos (2023) & 18 escolas analisadas & Taxa de conclusão = 87\% \\
         Souza (2021) & 32 entrevistas & Índice de concordância = 0,74 \\
-        \hline
+        \bottomrule
     \end{tabular}
     \fonte{Elaborado pelo autor a partir dos estudos revisados.}
 \end{table}

@@ -225,6 +225,11 @@
             {\ABNTEXchapterfont\bfseries\large\MakeUppercase{: \@subtitulo}}%
         }%
         
+        \ifvazia{\imprimirtituloestrangeiro}{}{%
+            \vspace{0.3cm}
+            \par{\normalfont\itshape\large\imprimirtituloestrangeiro}%
+        }%
+        
         \vspace{1.5cm}
         
         \begin{flushright}

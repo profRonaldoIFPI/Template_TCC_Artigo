@@ -160,20 +160,42 @@ O pacote `abntex-ifpi.sty` redefine os comandos de citação padrão para implem
 
 ## 5. Regras de Apresentação das Referências (NBR 6023)
 
-Conforme a ABNT NBR 6023 e as diretivas específicas do Manual de Normalização do IFPI (Seção 11), a lista de referências ao final do trabalho deve obedecer às seguintes regras de formatação:
+Conforme o item 5.2.3.1 ("Referências") do Manual de Normalização de Trabalhos Acadêmicos do IFPI (páginas 56 e 57), a lista de referências, ordenada em uma única lista, deve ser padronizada quanto ao recurso tipográfico e à adoção dos elementos complementares. Para este template, o recurso tipográfico escolhido para destacar as obras é o **Negrito**.
 
-1. **Localização e Título**:
-   - Inserida logo após o término dos elementos textuais.
-   - O título deve ser **REFERÊNCIAS** (grafado em letras maiúsculas, negrito, centralizado e sem numeração de seção).
-2. **Alinhamento e Espaçamento**:
-   - Todo o corpo das referências deve estar **alinhado à margem esquerda** (sem recuo de parágrafo).
-   - O espaçamento interno de cada referência deve ser **simples (1.0)**.
-   - Cada referência deve ser separada da seguinte por **uma linha em branco** de espaçamento simples.
-3. **Uniformidade Tipográfica**:
-   - O recurso tipográfico escolhido para destacar o título da obra (no caso deste template, o **negrito**) deve ser aplicado uniformemente em todas as referências com autoria declarada.
-   - Para obras sem indicação de autoria, a entrada é feita pelo próprio título em letras maiúsculas (apenas a primeira palavra), sem o destaque em negrito.
-4. **Links e Acesso Eletrônico**:
-   - Para referências retiradas da internet, o endereço da URL deve vir precedido de "`Disponível em: `" e a data de consulta precedida de "`Acesso em: `".
+A lista de referências deve estar em total conformidade com as normas ABNT NBR 10520:2023 e NBR 6023:2018:
+
+### 5.1. Regras Gerais de Formatação
+*   **Ordem:** A lista de referências deve ser organizada em **ordem alfabética**.
+*   **Alinhamento:** As referências devem ser **alinhadas à margem esquerda** do texto.
+*   **Espaçamento:** Devem ser elaboradas em **espaço simples (1,0)** e separadas entre si por **uma linha em branco** de espaço simples.
+*   **Destaque (Negrito):** O negrito é utilizado para destacar o elemento principal da referência, que geralmente é o **título** da obra. Esse destaque deve ser **uniforme** em todas as referências da lista. *Exceção:* Obras sem indicação de autoria (cuja entrada é feita pelo próprio título em caixa alta) não recebem esse destaque.
+*   **Documentos Online (URL e Acesso):** Para documentos acessados na internet, é obrigatório registrar o endereço eletrônico precedido da expressão "**Disponível em:**" e a data de acesso precedida da expressão "**Acesso em:**".
+
+### 5.2. Regras e Estruturas por Tipo de Referência
+
+#### Livros, Folhetos e Trabalhos Acadêmicos (Monografia no todo)
+*   **Estrutura:** AUTOR. **Título do livro: subtítulo (se houver)**. Edição (se houver). Local de publicação: Editora, Ano de publicação.
+*   **Exemplo:** GIL, Antônio Carlos. **Como elaborar projetos de pesquisa**. 6. ed. São Paulo: Atlas, 2019.
+
+#### Capítulos de Livros (Parte de monografia)
+*   **Estrutura:** AUTOR DA PARTE. Título do capítulo ou parte. *In*: AUTOR DO LIVRO. **Título do livro**. Edição. Local: Editora, Ano. páginas da parte referenciada.
+*   **Exemplo:** CARDOSO, A. P.; LEMLE, A.; BETHLEM, N. Doenças pulmonares obstrutivas crônicas. In: BETHLEM, N. **Pneumologia**. 4. ed. São Paulo: Atheneu, 2000. p. 600-621.
+
+#### Artigos de Revistas Científicas (Publicação periódica)
+*   **Estrutura:** AUTOR DO ARTIGO. Título do artigo. **Título da Revista**, Local de publicação, numeração do volume, número/edição, páginas inicial e final do artigo, mês (abreviado) e Ano de publicação.
+*   **Exemplo:** SANTOS, Ana Paula Lima dos; RODRIGUES, Mara Eliane Fonseca. Biblioteconomia: gênese, história e fundamentos. **Revista Brasileira de Biblioteconomia e Documentação**, São Paulo, v. 9, n. 2, p. 116-131, 2013.
+
+#### Trabalhos Apresentados em Eventos (Congressos, Simpósios, etc.)
+*   **Estrutura:** AUTOR DO TRABALHO. Título do trabalho. *In*: NOME DO EVENTO, numeração do evento., Ano de realização, Local (cidade) de realização. **Título do documento (Ex: Anais [...])**. Local de publicação: Editora, Ano de publicação. páginas inicial e final da parte.
+*   **Exemplo:** BLATTMANN, Ursula; RADOS, Gregório Varvakis. Bibliotecas acadêmicas na educação a distância. In: SEMINÁRIO NACIONAL DE BIBLIOTECAS UNIVERSITÁRIAS, 12., 2000, Recife. **Memória SNBU 2000 [...]**. Recife: UFPE, 2000. Disponível em: http://snbu.bvs.br/snbu2000/docs/pt/doc/. Acesso em: 8 nov. 2017.
+
+#### Legislação (Leis, Decretos, Portarias)
+*   **Estrutura:** JURISDIÇÃO (em caixa alta). Título/Epígrafe (Lei nº X, data). Ementa. **Dados da publicação** (Ex: Diário Oficial da União...), Local, volume/ano, número, páginas, data exata de publicação.
+*   **Exemplo:** BRASIL. Lei nº 9610, de 19 de fevereiro de 1998. Altera, atualiza e consolida a legislação sobre direitos autorais e dá outras providências. **Brasília, DF: Presidência da República**, 1998.
+
+#### Informação de Sites, Redes Sociais ou Documentos Eletrônicos Exclusivos
+*   **Estrutura:** AUTOR. Título da informação/serviço. Local, data. Descrição do meio (Ex: Twitter, Podcast). **Disponível em:** URL. **Acesso em:** dia mês. ano.
+*   **Exemplo:** C&A BRASIL. E se ele escolher o look dela? Vale apostar no conjuntinho de blusa e saia estampadas no #DiaDosMisturados. Brasil, 1 jun. 2016. Twitter: @cea_brasil. Disponível em: https:twitter.com/cea_brasil/status/738128768921833472. Acesso em: 2 jun. 2020.
 
 ---
 

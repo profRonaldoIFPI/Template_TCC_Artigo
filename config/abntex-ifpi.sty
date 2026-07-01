@@ -182,7 +182,7 @@
         \vfill
         
         % Nome do autor
-        {\ABNTEXchapterfont\normalsize\MakeUppercase{\imprimirautor}}
+        {\sffamily\normalsize\MakeUppercase{\imprimirautor}}
         
         \vfill
         
@@ -219,28 +219,28 @@
 \newcommand{\imprimircabecalhoartigo}{
     \begin{center}
         \vspace*{2cm}
-        {\ABNTEXchapterfont\bfseries\Large\MakeUppercase{\imprimirtitulo}}
+        {\sffamily\bfseries\normalsize\MakeUppercase{\imprimirtitulo}}
         
         \ifvazia{\@subtitulo}{}{%
-            {\ABNTEXchapterfont\bfseries\large\MakeUppercase{: \@subtitulo}}%
+            {\sffamily\bfseries\normalsize\MakeUppercase{: \@subtitulo}}%
         }%
         
         \ifvazia{\imprimirtituloestrangeiro}{}{%
             \vspace{0.3cm}
-            \par{\normalfont\itshape\large\imprimirtituloestrangeiro}%
+            \par{\normalfont\itshape\normalsize\imprimirtituloestrangeiro}%
         }%
         
         \vspace{1.5cm}
         
         \begin{flushright}
-            {\normalsize\imprimirautor\footnote{\ifvazia{\@vinculoautor}{}{\@vinculoautor. }E-mail: \@emailautor}}
+            {\sffamily\normalsize\imprimirautor\footnote{\ifvazia{\@vinculoautor}{}{\@vinculoautor. }E-mail: \@emailautor}}
             
             \ifvazia{\imprimirorientador}{}{%
-                {\normalsize\imprimirorientador\footnote{\@vinculoorientador. E-mail: \@emailorientador}}%
+                {\sffamily\normalsize\imprimirorientador\footnote{\@vinculoorientador. E-mail: \@emailorientador}}%
             }%
             
             \ifvazia{\imprimircoorientador}{}{%
-                {\normalsize\imprimircoorientador\footnote{\@vinculocoorientador. E-mail: \@emailcoorientador}}%
+                {\sffamily\normalsize\imprimircoorientador\footnote{\@vinculocoorientador. E-mail: \@emailcoorientador}}%
             }%
         \end{flushright}
         
@@ -250,9 +250,10 @@
 
 % Redefinição de resumo para artigo (com título centralizado)
 \renewenvironment{resumo}[1][\resumoname]{%
-   \begin{center}\ABNTEXchapterfont\bfseries\MakeUppercase{#1}\end{center}
+   \begin{center}\sffamily\bfseries\normalsize\MakeUppercase{#1}\end{center}
    \vspace{\onelineskip}
    \begin{SingleSpace}
+   \normalsize
    \setlength{\parindent}{0pt}% Garante que não haverá recuo na primeira linha do resumo
 }{%
    \end{SingleSpace}
@@ -263,7 +264,7 @@
 \renewcommand{\folhaderostocontent}{
     \begin{center}
         % Nome do autor
-        {\ABNTEXchapterfont\normalsize\MakeUppercase{\imprimirautor}}
+        {\sffamily\normalsize\imprimirautor}
         
         \vspace*{\fill}
         
@@ -400,9 +401,8 @@
 }
 \makeatother
 
-% Configurações para referências NBR 6023:2023
 \renewcommand{\bibsection}{%
-    \chapter*{\bibname}
+    \chapter*{\centering\bibname}
     \bibmark
     \ifnobibintoc\else
         \phantomsection

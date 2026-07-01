@@ -1,7 +1,7 @@
 % ========================================================================
-% TEMPLATE LATEX PARA TCC NO FORMTATO DE ARTIGO
+% TEMPLATE LATEX PARA TCC NO FORMATO DE ARTIGO
 % Baseado na classe abntex2 com personalizações para o IFPI
-% Conforme e Manual de Normalização de Trabalhos Acadêmicos do IFPI - 2024 
+% Conforme o Manual de Normalização de Trabalhos Acadêmicos do IFPI - 2024 
 % e as normas ABNT NBR:
 %   14724:2011
 %   6024:2012
@@ -17,7 +17,7 @@
 
 \input{config/config}   %configurações de formatação
 
-\input{estrutura/dados}           %dados institucionais e do projeto
+\input{estrutura/dados} %dados institucionais e do projeto
 
 % ========================================================================
 % INÍCIO DO DOCUMENTO
@@ -41,108 +41,35 @@
 \section{INTRODUÇÃO}
 \label{sec:introducao}
 
-A introdução de um projeto de pesquisa deve apresentar o tema de forma clara e contextualizada, demonstrando sua relevância no cenário atual. Este capítulo tem como objetivo situar o leitor no contexto da pesquisa, apresentando o problema a ser investigado e justificando a importância do estudo.
+A introdução constitui a parte inicial do texto e deve contextualizar o leitor sobre a pesquisa realizada. Conforme as orientações do \citeonline{IFPI_Manual_2024}, nesta seção é imperativo que constem de maneira clara a delimitação do assunto tratado, a contextualização com o campo teórico, o problema de pesquisa, a justificativa e os objetivos geral e específicos. Seguindo as normas institucionais para o formato de artigo científico, esses elementos não devem ser fragmentados em subseções separadas, mas sim diluídos e integrados de forma fluida ao longo do texto corrido.
 
-O tema desta pesquisa insere-se no campo de [ÁREA DE CONHECIMENTO], especificamente abordando [TEMA ESPECÍFICO]. A escolha deste tema justifica-se pela [JUSTIFICATIVA INICIAL], considerando sua relevância tanto no âmbito acadêmico quanto na aplicação prática.
+Como dica de uso do LaTeX, para fazer citações textuais que necessitem incluir o nome do autor na frase, utiliza-se o comando \verb|\citeonline{chave}|, que gerará formatações como \citeonline{marconi2017}. Para fundamentar a problemática e o design metodológico inicial, abordagens mistas ou qualitativas bem estruturadas podem ser sustentadas recorrendo-se a autores clássicos da metodologia, tais como \citeonline{creswell2018} ou \citeonline{gil2019}. A contextualização rigorosa na introdução prepara o ambiente para o aprofundamento das seções seguintes.
 
-Segundo \citeonline{marconi2017}, a área de [ÁREA DE CONHECIMENTO] tem apresentado crescente interesse por estudos que abordem [ASPECTO RELEVANTE DO TEMA]. Esta tendência evidencia a necessidade de pesquisas que contribuam para o avanço do conhecimento nesta área. Segundo \citeonline{Taigman_2014_CVPR}, é isso ai.
-
-O presente projeto de pesquisa propõe investigar [OBJETO DE ESTUDO], com foco em [ASPECTO ESPECÍFICO A SER INVESTIGADO]. A pesquisa será desenvolvida considerando [CONTEXTO OU DELIMITAÇÃO DO ESTUDO], o que permitirá uma análise aprofundada do fenômeno em questão \cite{10.1371/journal.pone.0257923,Taigman_2014_CVPR}.
-
-
-\section{PROBLEMA DE PESQUISA}
-\label{sec:problema}
-
-O problema de pesquisa constitui o elemento central que orienta todo o desenvolvimento do estudo. Conforme \citeonline{gil2019}, um problema bem formulado deve ser claro, preciso e operacional, permitindo a definição de objetivos específicos e a escolha de métodos adequados para sua investigação.
-
-No contexto desta pesquisa, observa-se que [DESCRIÇÃO DO PROBLEMA IDENTIFICADO]. Esta situação tem gerado [CONSEQUÊNCIAS OU IMPACTOS DO PROBLEMA], evidenciando a necessidade de estudos que possam contribuir para sua compreensão e possível solução.
-
-Diante do exposto, formula-se o seguinte problema de pesquisa:
-
-\textbf{[PERGUNTA DE PESQUISA PRINCIPAL]?}
-
-Este questionamento surge da observação de que [CONTEXTUALIZAÇÃO DO PROBLEMA], conforme evidenciado por \citeonline{silva2023} em seus estudos sobre [ÁREA RELACIONADA].
-
-
-\section{HIPÓTESES}
-\label{sec:hipoteses}   
-
-As hipóteses representam respostas provisórias ao problema de pesquisa, baseadas no conhecimento teórico disponível e na experiência do pesquisador. Segundo \citeonline{marconi2017}, as hipóteses devem ser testáveis e formuladas de maneira clara e precisa.
-
-Para o problema apresentado, formulam-se as seguintes hipóteses:
-
-
-\textbf{Hipótese Principal (H1):} [HIPÓTESE PRINCIPAL DA PESQUISA]
-
-\textbf{Hipóteses Secundárias:}
-\begin{itemize}
-    \item \textbf{H2:} [SEGUNDA HIPÓTESE]
-    \item \textbf{H3:} [TERCEIRA HIPÓTESE, SE APLICÁVEL]
-\end{itemize}
-
-Essas hipóteses serão testadas através da metodologia proposta, permitindo confirmar ou refutar as suposições iniciais da pesquisa.
-
-
-
-\section{OBJETIVOS}
-\label{sec:objetivos}
-
-Os objetivos definem o que se pretende alcançar com a realização da pesquisa. Devem ser formulados de forma clara e precisa, utilizando verbos no infinitivo que expressem ações concretas e mensuráveis.
-
-\subsection{Objetivo Geral}
-\label{subsec:objetivo-geral}
-
-[DESCREVER O OBJETIVO GERAL DA PESQUISA, UTILIZANDO VERBO NO INFINITIVO E EXPRESSANDO DE FORMA CLARA O QUE SE PRETENDE ALCANÇAR COM O ESTUDO]
-
-\subsection{Objetivos Específicos}
-\label{subsec:objetivos-especificos}
-
-\begin{enumerate}
-    \item Objetivo específico 1;
-    \item Objetivo específico 2;
-    \item Objetivo específico 3;
-    \item Objetivo específico 4 (se aplicável).
-\end{enumerate}
-
-\section{JUSTIFICATIVA}
-\label{sec:justificativa}
-
-A justificativa deve demonstrar a relevância e a importância da pesquisa, apresentando argumentos que evidenciem sua contribuição para o avanço do conhecimento científico e/ou para a solução de problemas práticos.
-
-Esta pesquisa justifica-se por diversos aspectos:
-
-\textbf{Relevância Científica:} O tema abordado contribui para o avanço do conhecimento na área de [ÁREA DE CONHECIMENTO], especialmente no que se refere a [ASPECTO ESPECÍFICO]. Conforme destacado por \citeonline{inep2022}, existe uma lacuna na literatura sobre [LACUNA IDENTIFICADA], que esta pesquisa pretende contribuir para preencher.
-
-\textbf{Relevância Social:} Os resultados desta pesquisa poderão beneficiar [PÚBLICO-ALVO OU SOCIEDADE EM GERAL], uma vez que [EXPLICAR COMO OS RESULTADOS PODEM SER APLICADOS]. Segundo dados de \cite{instituicao2023}, [APRESENTAR DADOS QUE EVIDENCIEM A RELEVÂNCIA SOCIAL].
-
-\textbf{Relevância Acadêmica:} Este estudo contribuirá para a formação acadêmica do pesquisador e para o desenvolvimento de pesquisas futuras na área, fornecendo subsídios teóricos e metodológicos para estudos similares.
-
-\textbf{Viabilidade:} A pesquisa é viável considerando os recursos disponíveis, o tempo previsto para sua execução e o acesso às fontes de informação necessárias.
+A partes do Projeto de Pesquisa como \textit{questão de pesquisa}, \textit{justificativa} e \textit{objetivos} devem ser diluidos no texto da introdução.
 
 \section{REFERENCIAL TEÓRICO}
 \label{sec:referencial}
 
-O referencial teórico constitui a base conceitual da pesquisa, apresentando as teorias, conceitos e estudos que fundamentam a investigação. Este capítulo deve demonstrar o conhecimento do pesquisador sobre o tema e situar a pesquisa no contexto do conhecimento científico existente.
+O referencial teórico, também denominado desenvolvimento, representa a fase de fundamentação lógica do tema, dividindo-se em seções e subseções para revisar a literatura pertinente. Conforme exposto por \citeonline{IFPI_Manual_2024}, esta seção destina-se a detalhar as leituras e embasamentos teóricos que sustentam a proposta, permitindo explicar, classificar, discutir e demonstrar o estado da arte do objeto de estudo. 
 
-\subsection{[TÍTULO DA PRIMEIRA SEÇÃO TEÓRICA]}
+No ambiente LaTeX, as divisões hierárquicas devem respeitar o sistema de numeração progressiva estabelecido pela norma NBR 6024. Para criar subdivisões, utilizam-se os comandos \verb|\subsection{Título}| para seções secundárias e \verb|\subsubsection{Título}| para seções terciárias, limitando-se o uso até a seção quinária. É fundamental lembrar que, em conformidade com o padrão institucional, todas as seções e subseções criadas devem, obrigatoriamente, conter um texto relacionado a elas, evitando-se títulos sem conteúdo subsequente.
+
+\subsection{TEMA IMPORTANTE DE EXPLICAR 1}
 \label{subsec:fundamentacao1}
 
-[DESENVOLVER A FUNDAMENTAÇÃO TEÓRICA PRINCIPAL DO TEMA, APRESENTANDO OS CONCEITOS CENTRAIS E AS TEORIAS QUE EMBASAM A PESQUISA]
+Aqui você deve escrever e citar autores que justifiquem ou que embasarão teoricamente o que pretende desenvolver citando-os com os comandos \verb|\cite{}| para uma citação no formato (Borges, 2026) ou \verb|\citeonline{}| para uma citação no formato Borges (2026). Uma alteração crucial trazida pela norma NBR 10520 e adotada pelo \citeonline{IFPI_Manual_2024} determina o fim do uso de letras maiúsculas (caixa alta) para as chamadas de autores inseridas dentro dos parênteses, mantendo-se apenas as iniciais maiúsculas.
 
-Segundo \citeonline{creswell2018}, [APRESENTAR CONCEITO OU TEORIA FUNDAMENTAL]. Esta definição é complementada por \citeonline{gil2019}, que acrescenta [INFORMAÇÃO COMPLEMENTAR].
-
+Exemplo de um texto que exemplifica como colocar uma figura no documento. Indique que é obrigatório citar a figura no texto, usando \verb|\autoref{}| para referenciar a Figura 1.
 
 \begin{figure}[htbp]
     \centering
-    \caption{Exemplo de figura no documento}
+    \caption{Exemplo de figura no documento. Você deve descrever o que está sendo representado na figura}
     \includegraphics[width=0.3\textwidth]{img/Logo-IFPI-Floriano-Horizontal.png}
     \fonte{IFPI - Instituto Federal do Piauí.}
     \label{fig:exemplo}
 \end{figure}
 
-
-
-Quando elementos visuais, como figuras, quadros ou tabelas, forem inseridos no texto, devem ser obrigatoriamente identificados e mencionados no corpo do trabalho, de modo a estabelecer uma relação clara entre a informação apresentada e sua discussão. Conforme orienta a \citeonline{ABNT_NBR14724_2011},  esses elementos devem ser citados no texto por seu número e título, garantindo uniformidade e rastreabilidade. Assim, pode-se fazer referência, por exemplo, à \autoref{fig:exemplo}, na qual se apresenta a logomarca horizontal do IFPI Campus Floriano.
+Quando elementos visuais, como figuras, quadros ou tabelas, forem inseridos no texto, devem ser obrigatoriamente identificados e mencionados no corpo do trabalho, de modo a estabelecer uma relação clara entre a informação apresentada e sua discussão. Conforme orienta a \citeonline{ABNT_NBR14724_2011}, esses elementos devem ser citados no texto por seu número e título, garantindo uniformidade e rastreabilidade. Assim, pode-se fazer referência, por exemplo, à \autoref{fig:exemplo}, na qual se apresenta a logomarca horizontal do IFPI Campus Floriano.
 
 
 % ========================================================================
@@ -153,7 +80,7 @@ Quando elementos visuais, como figuras, quadros ou tabelas, forem inseridos no t
 % A formatação automática do abntex2 já aplica estas regras quando se usa o ambiente citacao.
 
 \begin{citacao}
-Quando uma citação direta ultrapassa três linhas do texto original, ela deve ser apresentada em destaque, com recuo especial da margem esquerda, sem o uso de aspas, utilizando fonte menor que a do corpo do texto e espaçamento simples entre as linhas. Esta formatação diferenciada permite ao leitor identificar claramente que se trata de um trecho literalmente reproduzido de outra fonte, mantendo a integridade do pensimento do autor ciado \cite{ABNT_NBR10520_2023}.
+Quando uma citação direta ultrapassa três linhas do texto original, ela deve ser apresentada em destaque, com recuo especial da margem esquerda, sem o uso de aspas, utilizando fonte menor que a do corpo do texto e espaçamento simples entre as linhas. Esta formatação diferenciada permite ao leitor identificar claramente que se trata de um trecho literalmente reproduzido de outra fonte, mantendo a integridade do pensamento do autor citado \cite{ABNT_NBR10520_2023}.
 \end{citacao}
 
 \subsection{ESTUDOS RELACIONADOS}
@@ -161,21 +88,21 @@ Quando uma citação direta ultrapassa três linhas do texto original, ela deve 
 
 Esta seção apresenta uma revisão dos principais estudos relacionados ao tema da pesquisa, evidenciando o estado da arte e identificando lacunas que justifiquem a realização do presente estudo.
 
-A \textbf{tabela} é uma forma não discursiva de apresentação de informações em que o dado numérico é o elemento central, organizada de modo a facilitar comparações, análises e leitura rápida dos resultados. Segundo as normas da Associação Brasileira de Normas Técnicas (ABNT), as tabelas devem apresentar título centralizado, estrutura aberta (sem bordas laterais ou inferiores fechadas), fonte abaixo e devem ser citadas no texto conforme sua numeração \cite{ABNT_NBR14724_2011,ABNT_NBR15287_2011,ABNT_NBR6024_2012}. Lembre-se que toda tabela, figura ou quadro inseridos no seu trabalhos dever ser citatdo no texto, como por exemplo, a \autoref{tab:estudos}, que exemplifica a formatação adequada de uma tabela. 
+A \textbf{tabela} é uma forma não discursiva de apresentação de informações em que o dado numérico é o elemento central, organizada de modo a facilitar comparações, análises e leitura rápida dos resultados. Segundo as normas da Associação Brasileira de Normas Técnicas (ABNT), as tabelas devem apresentar título centralizado, estrutura aberta (sem bordas laterais ou inferiores fechadas), fonte abaixo e devem ser citadas no texto conforme sua numeração \cite{ABNT_NBR14724_2011,ABNT_NBR15287_2011,ABNT_NBR6024_2012}. Lembre-se que toda tabela, figura ou quadro inseridos no seu trabalho deve ser citado no texto, como por exemplo, a \autoref{tab:estudos}, que exemplifica a formatação adequada de uma tabela. 
 
 \begin{table}[htbp] %"table" é o ambiente padrão do LaTeX para tabelas.
     \centering
-    \caption{Exemplo de tabela}
+    \caption{Exemplo de tabela com dados numéricos}
     \label{tab:estudos}
-    \begin{tabular}{p{4cm}cc}
+    \begin{tabularx}{0.8\textwidth}{p{4cm}XX} % tabularx ajusta a largura para 80% da largura do texto (0.8\textwidth)
         \toprule
         \textbf{Estudo} & \textbf{Amostra} & \textbf{Métrica principal} \\ %\\ indica quebra de linha
         \midrule
         Costa e Rocha (2023) & 120 respondentes & Média de adoção = 4,1 \\
         Silva e Santos (2023) & 18 escolas analisadas & Taxa de conclusão = 87\% \\
-        Souza (2021) & 32 entrevistas & Índice de concordância = 0,74 \\
+        Souza (2021) & 32 interviews & Índice de concordância = 0,74 \\
         \bottomrule
-    \end{tabular}
+    \end{tabularx}
     \fonte{Elaborado pelo autor a partir dos estudos revisados.}
 \end{table}
 
@@ -198,36 +125,39 @@ A \textbf{tabela} é uma forma não discursiva de apresentação de informaçõe
 
 O \textbf{quadro}, diferentemente da tabela, é utilizado para apresentar dados qualitativos, como definições, características, categorias ou descrições. Ele possui estrutura fechada em todos os lados e organiza informações textuais de maneira comparativa e clara, sendo recomendado para sínteses conceituais ou classificações dentro do projeto de pesquisa \cite{ABNT_NBR14724_2011,ABNT_NBR15287_2011,ABNT_NBR6024_2012}. O \autoref{qua:estudos} exemplifica a formatação adequada de um quadro.
 
+
 \begin{quadro}[htbp]  %"quadro" é o ambiente personalizado do abntex2 para quadros
     \centering
-    \caption{Exemplo de quadro}
+    \caption{Exemplo de quadro, com conteudo qualitativo}
     \label{qua:estudos}
-    \begin{tabular}{|p{3cm}|p{4cm}|p{6cm}|} % os caracteres | indicam as bordas verticais
+    \begin{tabularx}{\textwidth}{|p{3cm}|p{4cm}|X|} % tabularx ajusta a largura total para \textwidth, usando X para a coluna flexível
         \hline
         \textbf{Autor/Ano} & \textbf{Metodologia} & \textbf{Principais Resultados} \\
         \hline
         Autor A (2023) & Pesquisa quantitativa & Ênfase na mensuração de impacto tecnológico \\ \hline
         Autor B (2022) & Estudo de caso & Identifica barreiras institucionais para inovação \\ \hline
         Autor C (2021) & Pesquisa qualitativa & Discute competências desenvolvidas pelos participantes \\ \hline
-    \end{tabular}
+    \end{tabularx}
     \fonte{Elaborado pelo autor.}
 \end{quadro}
 
-Você pode usar a feramenta \textit{Tables Genetator}\footnote{https://www.tablesgenerator.com/} para criar tabelas e quadros de forma visual e depois copiar o código para o seu documento.
+Você pode usar a ferramenta \textit{Tables Generator}\footnote{https://www.tablesgenerator.com/} para criar tabelas e quadros de forma visual e depois copiar o código para o seu documento.
 
 \section{METODOLOGIA}
 \label{sec:metodologia}
 
-A metodologia descreve os procedimentos que serão adotados para a realização da pesquisa, incluindo a caracterização do estudo, os métodos de coleta e análise de dados, e os aspectos éticos envolvidos.
+A seção de metodologia descreve detalhadamente os procedimentos e caminhos metodológicos adotados para a execução da pesquisa. Segundo o \citeonline{IFPI_Manual_2024}, o texto desta seção deve ser redigido utilizando um tratamento eminentemente impessoal e objetivo, mantendo a consistência e uniformidade em todo o corpo do trabalho. Devem constar nesta seção a caracterização da pesquisa, a delimitação da população e amostra, os instrumentos de coleta de dados, as técnicas de análise e a indicação dos aspectos éticos.
+
+Para estruturar listas ou itens detalhados no LaTeX sem numeração, recomenda-se a utilização do ambiente \verb|\begin{itemize}| com o comando \verb|\item|, garantindo o alinhamento adequado dos parágrafos secundários. Caso a listagem exija uma hierarquia com divisões subordinadas em alíneas e subalíneas, estas devem obedecer às formatações da NBR 6024, utilizando recuo padrão em relação à margem esquerda e separação por ponto e vírgula.
 
 \subsection{CARACTERIZAÇÃO DA PESQUISA}
 \label{subsec:caracterizacao}
 
-Esta pesquisa pode ser caracterizada, quanto aos seus objetivos, como [EXPLORATÓRIA/DESCRITIVA/EXPLICATIVA], uma vez que [JUSTIFICAR A CLASSIFICAÇÃO]. Segundo \citeonline{gil2019}, pesquisas [TIPO DA PESQUISA] têm como objetivo [OBJETIVO DO TIPO DE PESQUISA].
+Esta pesquisa pode ser caracterizada, quanto aos seus objetivos, como EXPLORATÓRIA, uma vez que busca proporcionar maior familiaridade com o problema. Segundo \citeonline{gil2019}, pesquisas dessa natureza têm como objetivo o aprimoramento de ideias ou a descoberta de intuições.
 
-Quanto à abordagem, trata-se de uma pesquisa [QUALITATIVA/QUANTITATIVA/MISTA], pois [JUSTIFICAR A ABORDAGEM]. \citeonline{creswell2018} destaca que a abordagem [TIPO DE ABORDAGEM] é adequada quando [SITUAÇÕES EM QUE A ABORDAGEM É ADEQUADA].
+Quanto à abordagem, trata-se de uma pesquisa QUANTITATIVA, pois adota métodos estatísticos para mensurar os dados coletados. \citeonline{creswell2018} destaca que a abordagem mista ou quantitativa é adequada quando se pretende testar teorias objetivas examinando a relação entre variáveis.
 
-Em relação aos procedimentos técnicos, será realizada uma [PESQUISA BIBLIOGRÁFICA/ESTUDO DE CASO/PESQUISA DE CAMPO/ETC.], que, conforme \citeonline{marconi2017}, caracteriza-se por [CARACTERÍSTICAS DO PROCEDIMENTO ESCOLHIDO].
+Em relação aos procedimentos técnicos, será realizada uma PESQUISA BIBLIOGRÁFICA, que, conforme \citeonline{marconi2017}, caracteriza-se pelo levantamento de contribuições teóricas já publicadas sobre o tema.
 
 \begin{figure}[htbp]
     \centering
@@ -240,34 +170,35 @@ Em relação aos procedimentos técnicos, será realizada uma [PESQUISA BIBLIOGR
 \subsection{POPULAÇÃO E AMOSTRA}
 \label{subsec:populacao-amostra}
 
-A população desta pesquisa é constituída por [DEFINIR A POPULAÇÃO]. Para a definição da amostra, será utilizada a técnica de [TIPO DE AMOSTRAGEM], que, segundo \citeonline{hair2019}, é adequada quando [JUSTIFICAR A ESCOLHA DA TÉCNICA DE AMOSTRAGEM].
+A população desta pesquisa é constituída por estudantes do IFPI. Para a definição da amostra, será utilizada a técnica de amostragem por conveniência, que, segundo \citeonline{hair2019}, é adequada quando a seleção dos elementos ocorre em função da facilidade de acesso a eles.
 
-O tamanho da amostra foi calculado considerando [CRITÉRIOS PARA CÁLCULO DA AMOSTRA], resultando em [NÚMERO] participantes/elementos.
+O tamanho da amostra foi calculado considerando critérios estatísticos, resultando em 150 participantes.
 
 \subsection{COLETA DE DADOS}
 \label{subsec:coleta-dados}
 
-A coleta de dados será realizada através de [INSTRUMENTOS DE COLETA], que permitirão obter informações sobre [TIPO DE INFORMAÇÕES A SEREM COLETADAS].
+A coleta de dados será realizada através de questionários eletrônicos, que permitirão obter informações sobre o perfil de adoção tecnológica.
 
 Os instrumentos escolhidos foram:
 \begin{itemize}
-    \item \textbf{[INSTRUMENTO 1]:} [DESCRIÇÃO E JUSTIFICATIVA]
-    \item \textbf{[INSTRUMENTO 2]:} [DESCRIÇÃO E JUSTIFICATIVA]
+    \item \textbf{Questionário Estruturado:} Aplicado via formulário digital para mapear dados numéricos.
+    \item \textbf{Roteiro de Entrevista:} Utilizado de forma complementar para captar percepções subjetivas.
 \end{itemize}
 
 \subsection{ANÁLISE DOS DADOS}
-\label{subsec:analise-dados}
+\label{subsec:análise}
 
-Os dados coletados serão analisados utilizando [TÉCNICAS DE ANÁLISE]. Para os dados quantitativos, será utilizada [ESTATÍSTICA DESCRITIVA/INFERENCIAL], com auxílio do software [NOME DO SOFTWARE]. Os dados qualitativos serão analisados através de [TÉCNICA DE ANÁLISE QUALITATIVA].
+Os dados estatísticos serão tratados por meio de análise descritiva com suporte computacional, enquanto os dados qualitativos seguirão a técnica de análise de conteúdo.
 
 \subsection{ASPECTOS ÉTICOS}
 \label{subsec:aspectos-eticos}
 
-Esta pesquisa será desenvolvida respeitando os princípios éticos estabelecidos pela Resolução nº 466/2012 do Conselho Nacional de Saúde. [SE APLICÁVEL: O projeto será submetido ao Comitê de Ética em Pesquisa antes do início da coleta de dados.]
+Esta pesquisa será desenvolvida respeitando os princípios éticos estabelecidos pela legislação vigente, garantindo o anonimato e o livre consentimento dos participantes envolvidos.
 
-Todos os participantes serão informados sobre os objetivos da pesquisa e assinarão o Termo de Consentimento Livre e Esclarecido (TCLE), garantindo sua participação voluntária e o direito de desistir a qualquer momento.
+\section{RESULTADOS E DISCUSSÃO}
+\label{sec:resultados}
 
-
+Aqui você deve apresentar os resultados da sua pesquisa e discuti-los com base na revisão de literatura realizada na seção de fundamentação teórica.
 
 \section{CONSIDERAÇÕES FINAIS}
 \label{sec:consideracoes-finais}
@@ -278,7 +209,6 @@ Devem ser feitas com base nos objetivos propostos e devem ser coerentes com todo
 % Os itens de Cronograma e Recursos (geralmente presentes em Projetos de Pesquisa) 
 % foram comentados ou embutidos como subseções/comentários para preservar a estrutura de Artigo Científico.
 % Em Artigos (resultados finais), o foco recai sobre Discussão dos Resultados.
-
 
 
 % ========================================================================

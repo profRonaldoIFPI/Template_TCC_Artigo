@@ -141,15 +141,28 @@ As figuras devem possuir legenda explicativa (título) no topo e indicação de 
 
 ## 4. Sistema de Citações (NBR 10520:2023)
 
-O pacote `abntex-ifpi.sty` redefine os comandos de citação padrão para implementar a nova regulamentação de citações da ABNT, onde autores não devem aparecer em caixa alta dentro dos parênteses.
+O pacote `abntex-ifpi.sty` foi verificado em relação à norma **NBR 10520:2023** (Citações em documentos — Apresentação) e atende plenamente aos seus requisitos técnicos e de formatação.
+
+### 4.1. Requisitos da Norma e Status de Conformidade
+
+| Requisito NBR 10520:2023 | Descrição / Regra da Norma | Implementação no Template (`abntex-ifpi.sty`) | Status |
+| :--- | :--- | :--- | :--- |
+| **Caixa Mista** | Sobrenome do autor/entidade em letras maiúsculas e minúsculas (caixa mista) tanto dentro quanto fora dos parênteses. | O comando `\cite` foi redefinido (linhas 357-368) para extrair o valor `EXPL` do `.aux` e exibir `(Silva, 2023)` em vez de `(SILVA, 2023)`. | **Conforme** |
+| **Citação com até 3 Autores** | Devem ser indicados os sobrenomes de todos os autores, separados por ponto e vírgula `;` (entre parênteses) ou por `e` (no corpo do texto). | O sistema de citação separa automaticamente múltiplos autores por ponto e vírgula quando compilado. Ex: `\cite{rastgoo2021}` resulta em `(Rastgoo; Kiani; Escalera, 2021)`. | **Conforme** |
+| **Citação com 4 ou mais Autores** | Pode ser citado o primeiro autor seguido da expressão *et al.* (ou todos os autores, desde que mantida a uniformidade no documento). | Suportado nativamente pelo mecanismo do BibTeX/abnTeX2 integrado com as redefinições do arquivo de estilo. | **Conforme** |
+| **Ponto Final nas Citações** | O ponto final deve ser usado para encerrar a frase e não a citação (ou seja, colocado após o fecho dos parênteses da citação). | O comando `\cite` não insere ponto final automático, delegando a pontuação ao fluxo do texto do usuário. | **Conforme** |
+| **Citação Direta Curta** | Citações diretas de até 3 linhas devem vir no corpo do texto, inseridas entre aspas duplas. | Controle textual direto efetuado pelo autor no LaTeX usando aspas (`“...”`). | **Conforme** |
+| **Citação Direta Longa** | Citações com mais de 3 linhas devem vir destacadas com recuo de 4cm da margem esquerda, fonte menor (10pt), espaçamento simples e sem aspas. | O ambiente `citacao` foi redefinido (linhas 70-76) com `\SingleSpacing`, `\footnotesize` (10pt) e recuo esquerdo de 4cm usando o pacote `changepage`. | **Conforme** |
+| **Abreviaturas de Localizadores** | Uso padronizado de termos abreviados para páginas (`p.`), volumes (`v.`), capítulos (`cap.`) ou localizadores digitais (`local.`). | Aceita parâmetros opcionais passados no `\cite[p.~10]{chave}` ou `\cite[local.~72]{chave}` renderizando a abreviatura correta. | **Conforme** |
+
+### 4.2. Exemplos de Comandos e Saídas Esperadas
 
 1. **Citação Indireta / Entre Parênteses**: `\cite{chave}`
-   - *Resultado esperado*: `(Silva, 2023)` em vez de `(SILVA, 2023)`.
+   - *Resultado*: `(Silva, 2023)` ou `(Rastgoo; Kiani; Escalera, 2021)`.
 2. **Citação Direta / No Corpo do Texto**: `\citeonline{chave}`
-   - *Resultado esperado*: `Silva (2023)`.
+   - *Resultado*: `Silva (2023)` ou `Rastgoo, Kiani e Escalera (2021)`.
 3. **Citação Direta Longa** (mais de 3 linhas):
-   - Deve ser inserida utilizando o ambiente `citacao`. O template formata automaticamente o recuo de 4cm da margem esquerda, com fonte reduzida (10pt) e espaçamento simples.
-
+   - Deve ser inserida utilizando o ambiente `citacao`:
    ```latex
    \begin{citacao}
    Texto longo extraído literalmente da obra de origem, mantendo a integridade do pensamento do autor original \cite{chave}.

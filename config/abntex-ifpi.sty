@@ -28,6 +28,7 @@
 \RequirePackage{newfloat}           % Para definir ambiente 'quadro' como float
 \RequirePackage{float}              % Ferramentas adicionais para floats
 \RequirePackage{chngcntr}           % Controle de contadores
+\RequirePackage{expl3}              % Para manipulação de strings via expl3 (citações)
 
 % ========================================================================
 % DEFINIÇÃO DE CORES INSTITUCIONAIS IFPI
@@ -264,7 +265,7 @@
 \renewcommand{\folhaderostocontent}{
     \begin{center}
         % Nome do autor
-        {\sffamily\normalsize\imprimirautor}
+        {\sffamily\normalsize\MakeUppercase{\imprimirautor}}
         
         \vspace*{\fill}
         
@@ -351,7 +352,25 @@
 }
 \makeatother
 
+% Retorna autor formatado para citações entre parênteses (substituindo vírgulas e "e" por ponto e vírgula ";")
 \makeatletter
+\ExplSyntaxOn
+\cs_new:Npn \abntifpi_format_author:n #1 {
+  \cs_if_exist:cTF {IFPI@EXPL@#1} {
+    \tl_set:Nx \l_tmpa_tl { \use:c {IFPI@EXPL@#1} }
+    \tl_replace_all:Nnn \l_tmpa_tl { ~e~ } { ;~ }
+    \tl_replace_all:Nnn \l_tmpa_tl { ~and~ } { ;~ }
+    \tl_replace_all:Nnn \l_tmpa_tl { ,~ } { ;~ }
+    \tl_use:N \l_tmpa_tl
+  }{
+    \citeauthor{#1}
+  }
+}
+
+\newcommand{\ABNTIFPI@AuthorExplFormatted}[1]{%
+  \abntifpi_format_author:n {#1}%
+}
+\ExplSyntaxOff
 \AtBeginDocument{
 % \cite opcionalmente aceita página/nota em #1, e chaves em #2 (lista separada por vírgulas)
 \DeclareRobustCommand{\cite}[2][]{%
@@ -377,10 +396,10 @@
   \fi
 }
 
-% Citação individual no formato Autor, ano usando forma EXPL e \citeyear
+% Citação individual no formato Autor, ano usando forma EXPL formatada e \citeyear
 \def\abntifpi@cite@one#1{%
   \begingroup
-    \def\abntifpi@a{\ABNTIFPI@AuthorExpl{#1}}% autor com capitalização correta (não CAIXA ALTA)
+    \def\abntifpi@a{\ABNTIFPI@AuthorExplFormatted{#1}}% autor com ponto e vírgula (formato parênteses)
     \def\abntifpi@y{\citeyear{#1}}% ano
     \abntifpi@a, \abntifpi@y
   \endgroup

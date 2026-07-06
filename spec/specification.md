@@ -212,7 +212,23 @@ A lista de referências deve estar em total conformidade com as normas ABNT NBR 
 
 ---
 
-## 6. Instruções de Compilação
+## 6. Padrão de Hierarquia e Capitalização de Seções (NBR 6024)
+
+De acordo com o **Manual de Normalização de Trabalhos Acadêmicos do IFPI (2024)**, que rege também a elaboração de artigos científicos de TCC, a hierarquia e formatação tipográfica das seções do texto baseiam-se na norma **ABNT NBR 6024:2012**. Os destaques tipográficos são aplicados de maneira uniforme no corpo do texto e no Sumário em até 5 níveis (quinária):
+
+| Nível da Seção | Comando LaTeX | Destaque Tipográfico e Capitalização | Exemplo Renders |
+| :--- | :--- | :--- | :--- |
+| **Seção Primária** | `\section{...}` | Caixa Alta (letras maiúsculas) e **Negrito** | **1 INTRODUÇÃO** |
+| **Seção Secundária** | `\subsection{...}` | Caixa Alta (letras maiúsculas) e Letra Normal (Sem Negrito) | 1.1 FUNDAMENTAÇÃO TEÓRICA |
+| **Seção Terciária** | `\subsubsection{...}` | Caixa Baixa (inicial maiúscula) e **Negrito** | **1.1.1 Evolução histórica** |
+| **Seção Quaternária** | `\paragraph{...}` | Caixa Baixa (inicial maiúscula) e Letra Normal (Sem Negrito) | 1.1.1.1 Métodos de coleta |
+| **Seção Quinária** | `\subparagraph{...}` | Caixa Baixa (inicial maiúscula) e *Itálico* | *1.1.1.1.1 Análise de dados* |
+
+No template, essas regras são tratadas de forma automatizada por meio do pacote de estilos [config/abntex-ifpi.sty](file:///home/rpb/Repositórios/Template_TCC_Artigo/config/abntex-ifpi.sty), garantindo que as seções primárias e secundárias fiquem em caixa alta e que a formatação do negrito/itálico seja aplicada sem exigir que o autor digite em maiúsculas manualmente.
+
+---
+
+## 7. Instruções de Compilação
 
 Para compilar o documento de forma que todas as citações cruzadas, referências bibliográficas, lista de figuras e tabelas sejam atualizadas corretamente, é necessária uma sequência específica de compilações.
 

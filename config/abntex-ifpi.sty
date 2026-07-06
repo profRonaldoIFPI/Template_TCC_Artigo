@@ -578,17 +578,107 @@
 \renewcommand{\ABNTEXchapterfont}{\bfseries}
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 
-% Configuração de títulos de seções
-\renewcommand{\ABNTEXsectionfont}{\bfseries}
+% Configuração de títulos de seções (Primárias: Caixa Alta, Negrito)
+\renewcommand{\ABNTEXsectionfont}{\bfseries\MakeUppercase}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 
-% Configuração de títulos de subseções
-\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+% Configuração de títulos de subseções (Secundárias: Caixa Alta, Sem Negrito)
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont\MakeUppercase}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
-% Configuração de títulos de subsubseções
+% Configuração de títulos de subsubseções (Terciárias: Caixa Baixa, Negrito)
 \renewcommand{\ABNTEXsubsubsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+% Configuração de títulos de seções quaternárias (Quaternárias: Caixa Baixa, Sem Negrito)
+\setparaheadstyle{\normalfont\normalsize}
+
+% Configuração de títulos de seções quinárias (Quinárias: Caixa Baixa, Itálico)
+\setsubparaheadstyle{\itshape\normalsize}
+
+% Forçar automaticamente a capitalização correta para as seções na compilação
+\usepackage{expl3}
+\ExplSyntaxOn
+\let\origsection\section
+\let\origsubsection\subsection
+\let\origsubsubsection\subsubsection
+\let\origparagraph\paragraph
+\let\origsubparagraph\subparagraph
+
+\NewDocumentCommand{\abntifpiUppercase}{m}{
+  \text_uppercase:n {#1}
+}
+\NewDocumentCommand{\abntifpiSentencecase}{m}{
+  \text_titlecase_first:n { \text_lowercase:n {#1} }
+}
+
+\RenewDocumentCommand{\section}{s o m}{
+  \IfBooleanTF{#1}{
+    \origsection*{\abntifpiUppercase{#3}}
+  }{
+    \IfValueTF{#2}{
+      \origsection[\abntifpiUppercase{#2}]{\abntifpiUppercase{#3}}
+    }{
+      \origsection{\abntifpiUppercase{#3}}
+    }
+  }
+}
+
+\RenewDocumentCommand{\subsection}{s o m}{
+  \IfBooleanTF{#1}{
+    \origsubsection*{\abntifpiUppercase{#3}}
+  }{
+    \IfValueTF{#2}{
+      \origsubsection[\abntifpiUppercase{#2}]{\abntifpiUppercase{#3}}
+    }{
+      \origsubsection{\abntifpiUppercase{#3}}
+    }
+  }
+}
+
+\RenewDocumentCommand{\subsubsection}{s o m}{
+  \IfBooleanTF{#1}{
+    \origsubsubsection*{\abntifpiSentencecase{#3}}
+  }{
+    \IfValueTF{#2}{
+      \origsubsubsection[\abntifpiSentencecase{#2}]{\abntifpiSentencecase{#3}}
+    }{
+      \origsubsubsection{\abntifpiSentencecase{#3}}
+    }
+  }
+}
+
+\RenewDocumentCommand{\paragraph}{s o m}{
+  \IfBooleanTF{#1}{
+    \origparagraph*{\abntifpiSentencecase{#3}}
+  }{
+    \IfValueTF{#2}{
+      \origparagraph[\abntifpiSentencecase{#2}]{\abntifpiSentencecase{#3}}
+    }{
+      \origparagraph{\abntifpiSentencecase{#3}}
+    }
+  }
+}
+
+\RenewDocumentCommand{\subparagraph}{s o m}{
+  \IfBooleanTF{#1}{
+    \origsubparagraph*{\abntifpiSentencecase{#3}}
+  }{
+    \IfValueTF{#2}{
+      \origsubparagraph[\abntifpiSentencecase{#2}]{\abntifpiSentencecase{#3}}
+    }{
+      \origsubparagraph{\abntifpiSentencecase{#3}}
+    }
+  }
+}
+\ExplSyntaxOff
+
+% Evitar avisos de tokens não permitidos em strings de PDF pelo hyperref
+\pdfstringdefDisableCommands{
+  \DeclareRobustCommand{\abntifpiUppercase}[1]{#1}
+  \DeclareRobustCommand{\abntifpiSentencecase}[1]{#1}
+}
+
 
 % Nomes principais em caixa alta e negrito
 \addto\captionsbrazil{%

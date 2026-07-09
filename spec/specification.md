@@ -22,7 +22,7 @@ O projeto utiliza a classe `abntex2` (baseada na tradicional classe `memoir`), a
 O projeto está organizado de maneira modular para facilitar a manutenção e a edição do conteúdo:
 
 ```text
-├── main.tex                 # Arquivo principal (ponto de entrada)
+├── artigo.tex               # Arquivo principal (ponto de entrada)
 ├── referencias.bib          # Base de dados bibliográfica (BibTeX)
 ├── gerar_pdf.sh             # Script automatizado para compilação do projeto
 ├── config/
@@ -37,7 +37,7 @@ O projeto está organizado de maneira modular para facilitar a manutenção e a 
 
 ### Detalhamento dos Arquivos Principais
 
-#### 1. [main.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/main.tex)
+#### 1. [artigo.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/artigo.tex)
 
 É o ponto de entrada da compilação. Ele coordena a inclusão dos arquivos de configuração e estrutura (`\input{...}`) e abriga os **Elementos Textuais**:
 
@@ -80,13 +80,16 @@ Gera automaticamente a capa, a folha de rosto, o cabeçalho de título acadêmic
 
 Comanda a geração das Referências utilizando o comando `\bibliography{referencias}` e prepara os ambientes opcionais para Apêndices e Anexos.
 
----
-
 ## 3. Elementos Gráficos e de Dados (LaTeX)
 
 ### 3.1. Figuras
 
 As figuras devem possuir legenda explicativa (título) no topo e indicação de fonte na parte inferior.
+
+> [!NOTE]
+> **Justificativa de Alinhamento da Fonte**: O alinhamento da "Fonte" das ilustrações foi padronizado como **centralizado**. Esta escolha justifica-se por:
+> 1. **Estética e Simetria**: Garante um melhor acabamento visual e simetria sob ilustrações de dimensões reduzidas (imagens pequenas), evitando que a fonte pareça solta ou deslocada para fora da área delimitada da figura centralizada.
+> 2. **Omissão Normativa**: A orientação exata do alinhamento horizontal da fonte (à esquerda versus centralizado) é uma omissão no Manual de Normalização de Trabalhos Acadêmicos do IFPI e nas normas gerais da ABNT/IBGE. A centralização foi definida como padrão do template por convenção de design.
 
 ```latex
 \begin{figure}[htbp]
@@ -226,6 +229,16 @@ De acordo com o **Manual de Normalização de Trabalhos Acadêmicos do IFPI (202
 
 No template, essas regras são tratadas de forma automatizada por meio do pacote de estilos [config/abntex-ifpi.sty](file:///home/rpb/Repositórios/Template_TCC_Artigo/config/abntex-ifpi.sty), garantindo que as seções primárias e secundárias fiquem em caixa alta e que a formatação do negrito/itálico seja aplicada sem exigir que o autor digite em maiúsculas manualmente.
 
+### Proteção de Siglas e Acrônimos em Títulos (Casing Protection)
+Como as seções terciárias, quaternárias e quinárias convertem automaticamente o texto para caixa baixa (com apenas a primeira letra em maiúscula), qualquer sigla ou acrônimo presente nesses títulos seria transformado indevidamente em letras minúsculas (ex: "NER" se tornaria "ner"). 
+
+Para preservar a grafia correta de siglas nestes títulos, deve-se envolvê-las com o comando **`\sigla{...}`** ou o comando nativo do LaTeX **`\MakeUppercase{...}`**.
+* **Exemplo de uso**:
+  ```latex
+  \subsubsection{Pipeline de \sigla{PLN} e reconhecimento de entidades (\sigla{NER})}
+  ```
+  Isso resultará na renderização correta: **1.1.1 Pipeline de PLN e reconhecimento de entidades (NER)**.
+
 ---
 
 ## 7. Instruções de Compilação
@@ -234,7 +247,7 @@ Para compilar o documento de forma que todas as citações cruzadas, referência
 
 O arquivo [gerar_pdf.sh](file:///home/rpb/Repositórios/Template_TCC_Artigo/gerar_pdf.sh) automatiza esse processo executando:
 
-1. `pdflatex main` (primeira passada para coletar referências externas)
-2. `bibtex main` (compilação do arquivo bibliográfico `.bib`)
-3. `pdflatex main` (segunda passada para associar citações)
-4. `pdflatex main` (terceira passada para resolver números de páginas e referências cruzadas)
+1. `pdflatex artigo` (primeira passada para coletar referências externas)
+2. `bibtex artigo` (compilação do arquivo bibliográfico `.bib`)
+3. `pdflatex artigo` (segunda passada para associar citações)
+4. `pdflatex artigo` (terceira passada para resolver números de páginas e referências cruzadas)

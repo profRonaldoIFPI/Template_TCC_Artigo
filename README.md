@@ -39,7 +39,7 @@ Caso prefira não instalar o LaTeX em sua máquina, você pode usar o Overleaf:
 2. Acesse o [Overleaf](https://www.overleaf.com/) e faça login.
 3. Clique em **New Project** > **Upload Project**.
 4. Faça o upload do arquivo `.zip` baixado.
-5. O Overleaf reconhecerá o arquivo `main.tex` e você poderá começar a editar!
+5. O Overleaf reconhecerá o arquivo `artigo.tex` e você poderá começar a editar!
 *(Atenção: Contas gratuitas do Overleaf podem sofrer com limites de tempo de compilação)*
 
 ---
@@ -76,7 +76,7 @@ Para ajustes de pacotes e de formatação geral, utilize `config/config.tex`.
 ### 2. Estrutura do documento
 
 ```
-main.tex               # Arquivo principal
+artigo.tex             # Arquivo principal
 config/
     config.tex         # Classe e configurações do documento
     abntex-ifpi.sty    # Personalizações IFPI
@@ -135,19 +135,19 @@ Veja como registrar os autores no `.bib`:
 
 ### 4. Compilação
 
-Para compilar o documento e automaticamente gerar um PDF com o nome `Título - Autor - Ano.pdf`, você pode usar o script incluso no terminal (Linux/macOS):
+Para compilar o documento e automaticamente gerar um PDF com o nome `artigo.pdf`, você pode usar o script incluso no terminal (Linux/macOS):
 
 ```bash
 ./gerar_pdf.sh
 ```
 
-Ou, se preferir compilar manualmente (o arquivo sairá como `main.pdf`):
+Ou, se preferir compilar manualmente (o arquivo sairá como `artigo.pdf`):
 
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+pdflatex artigo.tex
+bibtex artigo
+pdflatex artigo.tex
+pdflatex artigo.tex
 ```
 
 

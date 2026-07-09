@@ -145,6 +145,7 @@
 % Comando para data de aprovação
 \newcommand{\dataaprovacao}[1]{\def\@dataaprovacao{#1}}
 \newcommand{\@dataaprovacao}{}
+\newcommand{\imprimirdataaprovacao}{\@dataaprovacao}
 
 % Palavras-chave em portugues e ingles
 \newcommand{\palavraschave}[1]{\def\@palavraschave{#1}}
@@ -677,7 +678,11 @@
 \pdfstringdefDisableCommands{
   \DeclareRobustCommand{\abntifpiUppercase}[1]{#1}
   \DeclareRobustCommand{\abntifpiSentencecase}[1]{#1}
+  \DeclareRobustCommand{\sigla}[1]{#1}
 }
+
+% Atalho para manter siglas/acrônimos sempre em maiúsculas (protegidas contra lowercase automático)
+\newcommand{\sigla}[1]{\MakeUppercase{#1}}
 
 
 % Nomes principais em caixa alta e negrito

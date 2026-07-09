@@ -1,6 +1,6 @@
 # Estrutura do TCC (Formato Artigo Científico)
 
-Este documento define a estrutura completa de seções, subseções e elementos do TCC em formato de artigo científico para o IFPI Campus Floriano. A definição baseia-se na harmonização entre as diretrizes do **Manual de Normalização de Trabalhos Acadêmicos do IFPI (2024)** e a estrutura implementada no arquivo [main.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/main.tex), priorizando o Manual do IFPI em caso de quaisquer divergências.
+Este documento define a estrutura completa de seções, subseções e elementos do TCC em formato de artigo científico para o IFPI Campus Floriano. A definição baseia-se na harmonização entre as diretrizes do **Manual de Normalização de Trabalhos Acadêmicos do IFPI (2024)** e a estrutura implementada no arquivo [artigo.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/artigo.tex), priorizando o Manual do IFPI em caso de quaisquer divergências.
 
 ---
 
@@ -14,9 +14,9 @@ Este documento define a estrutura completa de seções, subseções e elementos 
 | **Resumo** | Obrigatório | De 150 a 250 palavras, sem citações/siglas, com 3 a 5 palavras-chave. | [pre_textuais.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/estrutura/pre_textuais.tex) |
 | **Abstract** | Obrigatório | Resumo traduzido para o inglês, contendo keywords de 3 a 5 termos. | [pre_textuais.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/estrutura/pre_textuais.tex) |
 | **Data de Aprovação** | Obrigatório | Formato `dia, mês e ano` (ex: 30/06/2026), posicionado logo abaixo das Keywords/Abstract. | [pre_textuais.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/estrutura/pre_textuais.tex) |
-| **Introdução** | Obrigatório | Contextualização, problemática, justificativa, objetivos e metodologia resumida. | [main.tex (L41)](file:///home/rpb/Repositórios/Template_TCC_Artigo/main.tex#L41) |
-| **Desenvolvimento** | Obrigatório | Subdividido em Referencial Teórico, Metodologia e Resultados. | [main.tex (L47)](file:///home/rpb/Repositórios/Template_TCC_Artigo/main.tex#L47) |
-| **Considerações Finais** | Obrigatório | Afirmação sintética baseada nos objetivos, sem ferir os direitos humanos. | [main.tex (L202)](file:///home/rpb/Repositórios/Template_TCC_Artigo/main.tex#L202) |
+| **Introdução** | Obrigatório | Contextualização, problemática, justificativa, objetivos e metodologia resumida. | [artigo.tex (L41)](file:///home/rpb/Repositórios/Template_TCC_Artigo/artigo.tex#L41) |
+| **Desenvolvimento** | Obrigatório | Subdividido em Referencial Teórico, Metodologia e Resultados. | [artigo.tex (L47)](file:///home/rpb/Repositórios/Template_TCC_Artigo/artigo.tex#L47) |
+| **Considerações Finais** | Obrigatório | Afirmação sintética baseada nos objetivos, sem ferir os direitos humanos. | [artigo.tex (L202)](file:///home/rpb/Repositórios/Template_TCC_Artigo/artigo.tex#L202) |
 | **Referências** | Obrigatório | Obras citadas no texto, ordenadas alfabeticamente com espaçamento simples. | [pos_textuais.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/estrutura/pos_textuais.tex) |
 | **Glossário** | Opcional | Lista alfabética para esclarecimento de termos obscuros. | [pos_textuais.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/estrutura/pos_textuais.tex) |
 | **Apêndices** | Opcional | Materiais elaborados pelo próprio autor (APÊNDICE A - TÍTULO). | [pos_textuais.tex](file:///home/rpb/Repositórios/Template_TCC_Artigo/estrutura/pos_textuais.tex) |

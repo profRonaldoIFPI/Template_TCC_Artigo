@@ -141,6 +141,41 @@ O \textbf{quadro}, diferentemente da tabela, é utilizado para apresentar dados 
     \fonte{Elaborado pelo autor.}
 \end{quadro}
 
+Embora a normatização tradicional estabeleça a estrutura básica para a apresentação de dados, a adoção do efeito zebrado (\textit{zebra striping}) confere um aspecto visual mais moderno aos documentos acadêmicos, melhorando expressivamente a legibilidade e o acompanhamento horizontal das informações. No ambiente LaTeX, essa formatação é facilmente obtida com o uso do pacote \texttt{xcolor} (com a opção \texttt{[table]}) e a aplicação do comando \verb|\rowcolors{linha_inicial}{cor_par}{cor_impar}|. Para ilustrar esse recurso visual, a \autoref{tab:estudos_zebrada} apresenta a versão zebrada da tabela numérica, enquanto o \autoref{qua:estudos_zebrado} demonstra a aplicação do efeito no quadro qualitativo.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Exemplo de tabela com dados numéricos e efeito zebrado}
+    \label{tab:estudos_zebrada}
+    \rowcolors{2}{gray!15}{white}
+    \begin{tabularx}{0.8\textwidth}{p{4cm}XX}
+        \toprule
+        \textbf{Estudo} & \textbf{Amostra} & \textbf{Métrica principal} \\
+        \midrule
+        Costa e Rocha (2023) & 120 respondentes & Média de adoção = 4,1 \\
+        Silva e Santos (2023) & 18 escolas analisadas & Taxa de conclusão = 87\% \\
+        Souza (2021) & 32 interviews & Índice de concordância = 0,74 \\
+        \bottomrule
+    \end{tabularx}
+    \fonte{Elaborado pelo autor a partir dos estudos revisados.}
+\end{table}
+
+\begin{quadro}[htbp]
+    \centering
+    \caption{Exemplo de quadro com conteúdo qualitativo e efeito zebrado}
+    \label{qua:estudos_zebrado}
+    \rowcolors{2}{gray!15}{white}
+    \begin{tabularx}{\textwidth}{|p{3cm}|p{4cm}|X|}
+        \hline
+        \textbf{Autor/Ano} & \textbf{Metodologia} & \textbf{Principais Resultados} \\
+        \hline
+        Autor A (2023) & Pesquisa quantitativa & Ênfase na mensuração de impacto tecnológico \\ \hline
+        Autor B (2022) & Estudo de caso & Identifica barreiras institucionais para inovação \\ \hline
+        Autor C (2021) & Pesquisa qualitativa & Discute competências desenvolvidas pelos participantes \\ \hline
+    \end{tabularx}
+    \fonte{Elaborado pelo autor.}
+\end{quadro}
+
 Você pode usar a ferramenta \textit{Tables Generator}\footnote{https://www.tablesgenerator.com/} para criar tabelas e quadros de forma visual e depois copiar o código para o seu documento.
 
 \section{METODOLOGIA}
@@ -170,7 +205,9 @@ Em relação aos procedimentos técnicos, será realizada uma PESQUISA BIBLIOGR�
 \subsection{POPULAÇÃO E AMOSTRA}
 \label{subsec:populacao-amostra}
 
-A população desta pesquisa é constituída por estudantes do IFPI. Para a definição da amostra, será utilizada a técnica de amostragem por conveniência, que, segundo \citeonline{hair2019}, é adequada quando a seleção dos elementos ocorre em função da facilidade de acesso a eles.
+A população desta pesquisa é constituída por estudantes do IFPI. Para a definição da amostra, será utilizada a técnica de amostragem por conveniência, que, segundo Hair Junior et al. (2019)\nocite{hair2019}, é adequada quando a seleção dos elementos ocorre em função da facilidade de acesso a eles.
+
+Como orientação de uso do LaTeX para casos especiais: Sobrenomes acompanhados de agnome de parentesco (tais como \textit{Junior}, \textit{Filho}, \textit{Neto}, \textit{Sobrinho}) devem manter a indicação do grau de parentesco vinculada ao sobrenome principal tanto nas chamadas no texto quanto na lista de referências (ex.: \textbf{Hair Junior et al., 2019} e \textbf{HAIR JUNIOR, Joseph F.}). Quando houver necessidade de ajuste fino na formatação da chamada no texto corrido, recomenda-se escrever a citação em texto corrido e utilizar o comando \verb|\nocite{chave}| imediatamente após (ex.: \verb|Hair Junior et al. (2019)\nocite{hair2019}|). O comando \verb|\nocite{}| assegura que a referência seja inserida e formatada com todos os autores na lista final de referências sem alterar o texto customizado no corpo do artigo.
 
 O tamanho da amostra foi calculado considerando critérios estatísticos, resultando em 150 participantes.
 

@@ -57,28 +57,19 @@
 % Indentação de parágrafos
 \setlength{\parindent}{1.25cm}
 
-% ========================================================================
-% CONFIGURAÇÕES DE FONTES CONFORME NBR 14724:2011
-% ========================================================================
-
-% Fonte padrão: 12pt para todo o texto
-\renewcommand{\normalsize}{\fontsize{12pt}{18pt}\selectfont}
-
-% Fonte 10pt para elementos específicos
-\renewcommand{\scriptsize}{\fontsize{10pt}{12pt}\selectfont}
+% Configurações de fontes conforme NBR 14724:2011
+% A classe abntex2/memoir com opção [12pt] já define \normalsize como 12pt.
 
 % Configurar citações longas (mais de 3 linhas) com fonte 10pt e recuo de 4 cm
 \renewenvironment{citacao}{%
+    \par
     \SingleSpacing% espaçamento simples conforme ABNT
-    \footnotesize% fonte menor (10pt)
+    \fontsize{10pt}{12pt}\selectfont% fonte menor (10pt)
     \begin{adjustwidth}{4cm}{0cm}% recuo de 4 cm à esquerda, 0 cm à direita
 }{%
     \end{adjustwidth}%
+    \par
 }
-
-% Espaçamento simples nos ambientes de resumo (Português) e abstract (Inglês)
-% O ambiente 'resumo' do abntex2 aceita opcional [Abstract] para a versão em inglês
-\AtBeginEnvironment{resumo}{\SingleSpacing}
 
 % Configurar notas de rodapé com fonte 10pt
 \renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
@@ -250,14 +241,14 @@
     \end{center}
 }
 
-% Redefinição de resumo para artigo (com título centralizado)
+% Redefinição de resumo para artigo (com título centralizado e espaçamento simples 1,0 escopado)
 \renewenvironment{resumo}[1][\resumoname]{%
    \begin{center}\sffamily\bfseries\normalsize\MakeUppercase{#1}\end{center}
    \vspace{\onelineskip}
    \begin{SingleSpace}
-   \normalsize
    \setlength{\parindent}{0pt}% Garante que não haverá recuo na primeira linha do resumo
 }{%
+   \par
    \end{SingleSpace}
    \vspace{\onelineskip}
 }
@@ -723,6 +714,7 @@
 % (sem linha de rodapé)
 
 \renewcommand{\textual}{%
+    \OnehalfSpacing
     \pagestyle{ifpihead}
     \aliaspagestyle{chapter}{ifpihead}
     \nouppercaseheads
@@ -759,7 +751,13 @@
 % Configuração de espaçamento antes e depois de títulos
 \setlength{\beforechapskip}{0pt}
 \setlength{\afterchapskip}{18pt}
-% Configuração de espaçamento das referências (NBR 6023)
-\setlength{\bibitemsep}{\baselineskip}
+% Configuração de espaçamento e alinhamento das referências (NBR 6023 / ABNT)
+\makeatletter
+\g@addto@macro\thebibliography{%
+  \raggedright
+  \setlength{\bibitemsep}{\baselineskip}% Espaço de 1 linha simples entre os registros
+  \setlength{\parsep}{0pt}%
+}
+\makeatother
 
 \endinput

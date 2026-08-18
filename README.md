@@ -38,11 +38,6 @@ Template_TCC_Artigo/
 │   ├── Logo-IFPI-IF.png
 │   ├── tema do tcc.png
 │   └── README.md             # Recomendações sobre inclusão de imagens
-├── Normas/                   # Acervo de normas ABNT e manuais institucionais em PDF/Docx
-│   ├── ABNT-NBR-6023-Referencias-Bibliograficas.pdf
-│   ├── ABNT-NBR-6024-Numeracao-progressiva-das-secoes-de-um-documento.pdf
-│   ├── ABNT-NBR-6027-Sumario.pdf
-│   ├── ABNT_NBR_14724_2024-1.pdf
 └── Normas/                   # Acervo de normas ABNT e manuais institucionais em PDF/Docx
     ├── ABNT-NBR-6023-Referencias-Bibliograficas.pdf
     ├── ABNT-NBR-6024-Numeracao-progressiva-das-secoes-de-um-documento.pdf
@@ -67,18 +62,23 @@ Você pode utilizar este template tanto **localmente em seu computador** (recome
 ### Opção 1: Uso Local (Linux, Windows ou macOS)
 
 Requer uma distribuição LaTeX instalada:
+
 - **Windows**: [MiKTeX](https://miktex.org/) ou [TeX Live](https://www.tug.org/texlive/)
 - **Linux**: TeX Live (`sudo apt install texlive-full` ou pacotes base + `texlive-lang-portuguese` `texlive-publishers`)
 - **macOS**: [MacTeX](https://www.tug.org/mactex/)
 
-#### Compilação Automatizada:
+#### Compilação Automatizada
+
 O repositório inclui scripts que executam todo o fluxo de compilação (`pdflatex` + `bibtex` + `pdflatex` x2) para gerar o `artigo.pdf`:
 
 - **Windows**: Dê um duplo clique no arquivo `gerar_pdf.bat` ou execute no Prompt de Comando (CMD):
+
   ```cmd
   gerar_pdf.bat
   ```
+
 - **Linux / macOS**: Execute no terminal:
+
   ```bash
   ./gerar_pdf.sh
   ```
@@ -110,6 +110,7 @@ Se preferir utilizar um editor (como VS Code com a extensão *LaTeX Workshop*, T
 > As chamadas no texto utilizam autor/organização em **minúsculas** com a primeira letra maiúscula (ex: `(Borges, 2025)` e `Organização das Nações Unidas (2025)`). Nas Referências ao final, os nomes/siglas aparecem automaticamente em **CAIXA ALTA**.
 >
 > Para instituições/organizações no `.bib`, utilize o campo `organization` sem chaves duplas e, se houver sigla, o campo `org-short`:
+>
 > ```bibtex
 > @manual{ibge2025,
 >     organization = {Instituto Brasileiro de Geografia e Estat{\'e}stica},
@@ -118,6 +119,7 @@ Se preferir utilizar um editor (como VS Code com a extensão *LaTeX Workshop*, T
 >     year = {2025}
 > }
 > ```
+>
 > *Nota: Proteja caracteres acentuados em `organization` com sintaxe LaTeX (ex: `{\c c}`, `{\~a}`, `{\'e}`).*
 
 ---
@@ -133,7 +135,7 @@ python3 verificar_conformidade.py
 ---
 
 **Professor Ronaldo Pires Borges**
- 
+
 - Sempre recompile na ordem indicada para evitar referências quebradas.  
 - Utilize `.gitignore` fornecido para evitar versionar artefatos temporários do LaTeX.
 

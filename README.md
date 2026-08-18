@@ -1,189 +1,138 @@
-# Template LaTeX para TCC em formato de Artigo Científico - IFPI
+# Template LaTeX para TCC em Formato de Artigo Científico — IFPI
 
-Template preparado para artigos científicos apresentados como Trabalhos de Conclusão de Curso (TCC) do Instituto Federal do Piauí (IFPI), alinhado com as normas ABNT e com o *Manual de Trabalhos Acadêmicos do IFPI (2024)*.
-
-## Características
-
-- **Base**: classe `abntex2` atualizada
-- **Normas atendidas**: NBR 6022:2018 (Artigo Científico), 10520:2023, 6024, 6027, 6023 (versões vigentes) e Manual TCC IFPI.
-- **Formatação padrão**: margens 3 cm/2 cm, Arial/Times New Roman 12 pt, espaçamento simples.
-- **Personalização**: folha de rosto, cabeçalho de artigo e comandos específicos do IFPI.
-- **Pronto para uso**: estrutura completa com exemplos comentados.
-- **Idioma padrão**: português do Brasil (babel `brazil`).
-
-## Requisitos e Recomendações
-
-Para utilizar este template e compilar o documento de forma adequada, você precisará dos seguintes softwares e pacotes instalados em seu computador:
-
-- **Distribuição LaTeX**: Recomendamos o [TeX Live](https://www.tug.org/texlive/) (Linux/Windows) ou [MacTeX](https://www.tug.org/mactex/) (macOS).
-- **Pacotes LaTeX Essenciais**: `abntex2`, `babel`, `microtype`, `enumitem`, `graphicx`, `hyperref`, entre outros. Em distribuições Linux baseadas no Debian/Ubuntu, você pode instalar os pacotes essenciais com:
-  ```bash
-  sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-lang-portuguese texlive-publishers texlive-bibtex-extra
-  ```
-- **Editor LaTeX (Opcional)**: Automações visuais podem ser obtidas com [VS Code](https://code.visualstudio.com/) (usando a extensão *LaTeX Workshop*), [TeXstudio](https://www.texstudio.org/) ou [Texmaker](https://www.xm1math.net/texmaker/).
-
-> [!IMPORTANTE]
-> **Recomendação de Uso Offline (Local)**:
-> Embora seja possível utilizar plataformas online como o **Overleaf**, recomendamos fortemente o download e **configuração local** do repositório. Editores online frequentemente impõem **limites de tempo de compilação** ("timeout") e restrição de funcionalidades em seus planos gratuitos (*Free*), o que pode causar travamentos durante o processo de geração do PDF devido à complexidade da classe `abntex2` e o processamento de imagens e bibliografias do seu trabalho de conclusão.
-
-## Como usar
-
-Você pode utilizar este template de duas formas: localmente em seu computador ou através da plataforma online Overleaf.
-
-### Modo 1: Uso Local (Recomendado)
-Para o uso local, você precisará de uma distribuição LaTeX (como TeX Live, MacTeX ou mesmo com VSCode e extenções LaTeX) instalada em seu sistema. Para compilar, você pode utilizar o terminal ou um editor de sua preferência (como VS Code, TeXstudio, Texmaker, etc.). Veja a seção "Requisitos e Recomendações" acima para detalhes de instalação.
-
-### Modo 2: Uso via Overleaf
-Caso prefira não instalar o LaTeX em sua máquina, você pode usar o Overleaf:
-1. Baixe este repositório como um arquivo `.zip` (através do botão *Code* > *Download ZIP* no GitHub).
-2. Acesse o [Overleaf](https://www.overleaf.com/) e faça login.
-3. Clique em **New Project** > **Upload Project**.
-4. Faça o upload do arquivo `.zip` baixado.
-5. O Overleaf reconhecerá o arquivo `artigo.tex` e você poderá começar a editar!
-*(Atenção: Contas gratuitas do Overleaf podem sofrer com limites de tempo de compilação)*
+Template em LaTeX para elaboração de Trabalhos de Conclusão de Curso (TCC) em formato de artigo científico do **Instituto Federal do Piauí (IFPI)**, totalmente alinhado às normas ABNT vigentes (incluindo a NBR 10520:2023 para citações) e ao *Manual de Trabalhos Acadêmicos do IFPI (2024)*.
 
 ---
 
-### 1. Personalização dos dados
+📄 **Visualizar Exemplo da Saída (PDF):**  
+Para ver o resultado final formatado, acesse diretamente o modelo compilado:  
+👉 **[artigo.pdf](artigo.pdf)**
 
-Edite o arquivo `estrutura/dados.tex` e ajuste os campos:
+---
 
-```latex
-% Dados do artigo (estrutura/dados.tex)
-\titulo{SEU TÍTULO AQUI}
-\subtitulo{SUBTÍTULO SE HOUVER}
+## 📁 Estrutura Completa do Repositório
 
-% Autoria
-\autor{SEU NOME COMPLETO}
-\emailautor{seuemail@aluno.ifpi.edu.br}
-\vinculoautor{IFPI -- Campus Floriano}
-
-% Orientação
-\orientador{Prof. Dr. Nome do Orientador}
-\emailorientador{orientador@ifpi.edu.br}
-\vinculoorientador{IFPI -- Campus Floriano}
-
-% Coorientação (deixe vazio se não houver coorientador)
-\coorientador{}
-\emailcoorientador{}
-\vinculocoorientador{}
-
-% ...outros dados institucionais e de data
+```text
+Template_TCC_Artigo/
+├── artigo.tex                # Arquivo principal do artigo (corpo do texto e seções)
+├── artigo.pdf                # Modelo compilado em PDF (resultado final)
+├── referencias.bib           # Base de dados de referências bibliográficas (BibTeX)
+├── gerar_pdf.sh              # Script de compilação automática para Linux / macOS
+├── gerar_pdf.bat             # Script de compilação automática para Windows
+├── verificar_conformidade.py # Script Python para verificação de conformidade ABNT/IFPI
+├── manual_text.txt           # Extração textual do Manual TCC IFPI para referência
+├── LICENSE                   # Licença de uso do modelo
+├── README.md                 # Guia de documentação e utilização
+├── config/                   # Configurações do LaTeX e personalizações
+│   ├── config.tex            # Pacotes, formatação da classe abntex2 e metadados
+│   ├── abntex-ifpi.sty       # Pacote customizado com regras específicas do IFPI
+│   └── README.md             # Instruções sobre o diretório de configurações
+├── estrutura/                # Módulos de conteúdo e dados do trabalho
+│   ├── dados.tex             # Dados cadastrais (título, autor, orientador, campus)
+│   ├── pre_textuais.tex      # Elementos pré-textuais (cabeçalho, resumo e abstract)
+│   ├── pos_textuais.tex      # Elementos pós-textuais (referências, apêndices, anexos)
+│   └── README.md             # Orientações sobre a estrutura textual
+├── img/                      # Imagens, logotipos e figuras do trabalho
+│   ├── Logo-IFPI-Floriano-Horizontal.png
+│   ├── Logo-IFPI-Floriano-Vertical.png
+│   ├── Logo-IFPI-IF.png
+│   ├── tema do tcc.png
+│   └── README.md             # Recomendações sobre inclusão de imagens
+├── Normas/                   # Acervo de normas ABNT e manuais institucionais em PDF/Docx
+│   ├── ABNT-NBR-6023-Referencias-Bibliograficas.pdf
+│   ├── ABNT-NBR-6024-Numeracao-progressiva-das-secoes-de-um-documento.pdf
+│   ├── ABNT-NBR-6027-Sumario.pdf
+│   ├── ABNT_NBR_14724_2024-1.pdf
+│   ├── ABNT_NBR_15287-2011_Projeto-de-Pesquisa-1.pdf
+│   ├── Abnt_nbr_10520_2023.pdf
+│   ├── Manual TCC - IFPI.pdf
+│   ├── Modelo Artigo IFPI.docx
+│   ├── Modelo Artigo IFPI.pdf
+│   ├── NBR-15287_2025_Projeto-de-pesquisa.pdf
+│   ├── Normas de apresentação tabular - IBGE - 1993.pdf
+│   └── README.md             # Relação descritiva das normas incluídas
+└── spec/                     # Especificações técnicas do projeto
+    ├── estrutura-tcc.md      # Mapeamento da estrutura acadêmica
+    ├── specification.md      # Especificação funcional e requisitos do template
+    └── README.md             # Visão geral das especificações
 ```
 
-Para ajustes de pacotes e de formatação geral, utilize `config/config.tex`.
+---
 
-### 2. Estrutura do documento
+## 🚀 Como Usar
 
-```
-artigo.tex             # Arquivo principal
-config/
-    config.tex         # Classe e configurações do documento
-    abntex-ifpi.sty    # Personalizações IFPI
-estrutura/
-    dados.tex          # Dados do projeto de pesquisa
-img/                   # Imagens do documento
-referencias.bib        # Bibliografia
-README.md              # Este arquivo
-```
+Você pode utilizar este template tanto **localmente em seu computador** (recomendado) quanto via **Overleaf**.
 
-### 3. Referências e Citações (ABNT NBR 10520:2023)
+### Opção 1: Uso Local (Linux, Windows ou macOS)
 
-O template já está configurado para atender à atualização da norma **ABNT NBR 10520:2023**, que determina o fim do uso de CAIXA ALTA para a chamada de autores dentro dos parênteses no corpo do texto (ex: (Borges, 2025)).
+Requer uma distribuição LaTeX instalada:
+- **Windows**: [MiKTeX](https://miktex.org/) ou [TeX Live](https://www.tug.org/texlive/)
+- **Linux**: TeX Live (`sudo apt install texlive-full` ou pacotes base + `texlive-lang-portuguese` `texlive-publishers`)
+- **macOS**: [MacTeX](https://www.tug.org/mactex/)
 
-Para que isso funcione corretamente, você deve registrar as entradas no arquivo `referencias.bib` com a **capitalização natural** das palavras. O template (`config/abntex-ifpi.sty`) cuidará de formatar as citações no texto apenas com a primeira letra maiúscula, enquanto manterá a lista de referências ao final do documento em CAIXA ALTA.
+#### Compilação Automatizada:
+O repositório inclui scripts que executam todo o fluxo de compilação (`pdflatex` + `bibtex` + `pdflatex` x2) para gerar o `artigo.pdf`:
 
-Veja como registrar os autores no `.bib`:
-
-- **Nomes de pessoas**: Registre normalmente, apenas com a primeira letra maiúscula.
-  ```bibtex
-  @book{borges2025,
-      author = {Borges, Ronaldo},
-      title = {Título da Obra...}
-  }
+- **Windows**: Dê um duplo clique no arquivo `gerar_pdf.bat` ou execute no Prompt de Comando (CMD):
+  ```cmd
+  gerar_pdf.bat
   ```
-- **Obras de Instituições/Organizações**: **Não use o campo `author`** com chaves duplas `{{}}`. Isso impede que o BibTeX mude a capitalização do nome nas Referências.
-  Em vez disso, utilize o campo `organization` com a capitalização natural. Se a organização for mais conhecida por uma sigla e você quiser citá-la assim no texto, adicione o campo `org-short`. O pacote `abntex2cite` fará automaticamente a formatação Normal no texto e CAIXA ALTA nas referências!
-
-  **Exemplo com sigla:**
-  ```bibtex
-  @manual{ibge2025,
-      organization = {Instituto Brasileiro de Geografia e Estatística},
-      org-short = {IBGE},
-      title = {Normas...}
-  }
+- **Linux / macOS**: Execute no terminal:
+  ```bash
+  ./gerar_pdf.sh
   ```
-  *(No texto ficará: **IBGE (2025)**. Nas Referências: **INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Normas... (2025).**)*
 
-  **Exemplo por extenso:**
-  ```bibtex
-  @manual{onu2025,
-      organization = {Organização das Nações Unidas},
-      title = {Relatório...}
-  }
-  ```
-  *(No texto ficará: **Organização das Nações Unidas (2025)**. Nas Referências: **ORGANIZAÇÃO DAS NAÇÕES UNIDAS. Relatório... (2025).**)*
+Se preferir utilizar um editor (como VS Code com a extensão *LaTeX Workshop*, TeXstudio ou Texmaker), basta abrir a pasta do projeto e compilar o arquivo principal `artigo.tex`.
 
-> **Atenção para Acentuação em Organizações**: O BibTeX (motor que gera as referências) tem uma limitação histórica com caracteres especiais em UTF-8 (como á, ç, ã) quando precisa convertê-los automaticamente para CAIXA ALTA no campo `organization`. Para evitar que a letra acentuada "desapareça" ou fique deformada na lista de referências, você deve proteger a letra acentuada usando comandos do LaTeX. 
-> - Em vez de `ç` use `{\c c}` 
-> - Em vez de `ã` use `{\~a}`
-> - Em vez de `á` use `{\'a}`
-> - Em vez de `é` use `{\'e}`
-> - Em vez de `í` use `{\'i}`
+---
+
+### Opção 2: Uso no Overleaf
+
+1. Baixe o repositório em formato `.zip` (**Code** > **Download ZIP** no GitHub).
+2. Acesse o [Overleaf](https://www.overleaf.com/) e clique em **New Project** > **Upload Project**.
+3. Envie o arquivo `.zip`. O Overleaf identificará automaticamente o arquivo principal `artigo.tex`.
+
+---
+
+## ✏️ Edição do Documento
+
+1. **Dados do Artigo (`estrutura/dados.tex`)**:  
+   Preencha o título, nome do autor, orientador, e-mails e vínculo institucional.
+
+2. **Corpo do Texto (`artigo.tex`)**:  
+   Escreva o conteúdo das seções (Introdução, Referencial Teórico, Metodologia, Resultados e Conclusão).
+
+3. **Citações e Referências (`referencias.bib`)**:  
+   Adicione suas referências em formato BibTeX.
+
+> ℹ️ **Regra ABNT NBR 10520:2023 (Citações)**:  
+> As chamadas no texto utilizam autor/organização em **minúsculas** com a primeira letra maiúscula (ex: `(Borges, 2025)` e `Organização das Nações Unidas (2025)`). Nas Referências ao final, os nomes/siglas aparecem automaticamente em **CAIXA ALTA**.
 >
-> *(Ex: `organization = {Associa{\c c}{\~a}o Brasileira de Normas T{\'e}cnicas}`)*
+> Para instituições/organizações no `.bib`, utilize o campo `organization` sem chaves duplas e, se houver sigla, o campo `org-short`:
+> ```bibtex
+> @manual{ibge2025,
+>     organization = {Instituto Brasileiro de Geografia e Estat{\'e}stica},
+>     org-short = {IBGE},
+>     title = {Normas de Apresenta{\c c}{\~a}o Tabular},
+>     year = {2025}
+> }
+> ```
+> *Nota: Proteja caracteres acentuados em `organization` com sintaxe LaTeX (ex: `{\c c}`, `{\~a}`, `{\'e}`).*
 
-### 4. Compilação
+---
 
-Para compilar o documento e automaticamente gerar um PDF com o nome `artigo.pdf`, você pode usar o script incluso no terminal (Linux/macOS):
+## 🔍 Verificação de Conformidade
+
+Este template conta com um script em Python para validar a estrutura e conformidade do seu documento:
 
 ```bash
-./gerar_pdf.sh
+python3 verificar_conformidade.py
 ```
 
-Ou, se preferir compilar manualmente (o arquivo sairá como `artigo.pdf`):
+---
 
-```bash
-pdflatex artigo.tex
-bibtex artigo
-pdflatex artigo.tex
-pdflatex artigo.tex
-```
-
-
-
-## Conteúdo do template
-
-### Elementos pré-textuais e Cabeçalho
-- Capa institucional IFPI
-- Folha de rosto
-- Cabeçalho do Artigo (Título, Autores, Instituição, E-mails)
-- Resumo (português) e Abstract (inglês) com palavras-chave
-- Data de aprovação
-
-### Elementos textuais
-- Introdução
-- Referencial Teórico / Estudos Relacionados
-- Metodologia
-- Resultados e Discussões
-- Considerações Finais
-
-### Elementos pós-textuais
-- Referências bibliográficas conforme ABNT NBR 6023:2018
-- Glossário (opcional)
-- Apêndices e Anexos (opcionais)
-- Agradecimentos (opcional)
-
-## Recursos especiais
-
-- Comandos `\cite{}` e `\citeonline{}` já configurados para ABNT (pacote `abntex2cite`).  
-- Ajustes de metadados PDF automáticos (`config/config.tex` + `estrutura/dados.tex`).  
-
-## Dicas rápidas
-
-- Use `estrutura/dados.tex` para atualizar rapidamente título, autores, orientadores e dados institucionais.  
-- Ajustes finos (pacotes adicionais, comandos personalizados) vão em `config/config.tex`.  
-- Mantenha imagens em `img/` e referencie com caminhos relativos (`img/arquivo.png`).  
+**Professor Ronaldo Pires Borges**
+ 
 - Sempre recompile na ordem indicada para evitar referências quebradas.  
 - Utilize `.gitignore` fornecido para evitar versionar artefatos temporários do LaTeX.
 

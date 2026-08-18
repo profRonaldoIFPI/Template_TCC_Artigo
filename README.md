@@ -43,18 +43,19 @@ Template_TCC_Artigo/
 │   ├── ABNT-NBR-6024-Numeracao-progressiva-das-secoes-de-um-documento.pdf
 │   ├── ABNT-NBR-6027-Sumario.pdf
 │   ├── ABNT_NBR_14724_2024-1.pdf
-│   ├── ABNT_NBR_15287-2011_Projeto-de-Pesquisa-1.pdf
-│   ├── Abnt_nbr_10520_2023.pdf
-│   ├── Manual TCC - IFPI.pdf
-│   ├── Modelo Artigo IFPI.docx
-│   ├── Modelo Artigo IFPI.pdf
-│   ├── NBR-15287_2025_Projeto-de-pesquisa.pdf
-│   ├── Normas de apresentação tabular - IBGE - 1993.pdf
-│   └── README.md             # Relação descritiva das normas incluídas
-└── spec/                     # Especificações técnicas do projeto
-    ├── estrutura-tcc.md      # Mapeamento da estrutura acadêmica
-    ├── specification.md      # Especificação funcional e requisitos do template
-    └── README.md             # Visão geral das especificações
+└── Normas/                   # Acervo de normas ABNT e manuais institucionais em PDF/Docx
+    ├── ABNT-NBR-6023-Referencias-Bibliograficas.pdf
+    ├── ABNT-NBR-6024-Numeracao-progressiva-das-secoes-de-um-documento.pdf
+    ├── ABNT-NBR-6027-Sumario.pdf
+    ├── ABNT_NBR_14724_2024-1.pdf
+    ├── ABNT_NBR_15287-2011_Projeto-de-Pesquisa-1.pdf
+    ├── Abnt_nbr_10520_2023.pdf
+    ├── Manual TCC - IFPI.pdf
+    ├── Modelo Artigo IFPI.docx
+    ├── Modelo Artigo IFPI.pdf
+    ├── NBR-15287_2025_Projeto-de-pesquisa.pdf
+    ├── Normas de apresentação tabular - IBGE - 1993.pdf
+    └── README.md             # Relação descritiva das normas incluídas
 ```
 
 ---

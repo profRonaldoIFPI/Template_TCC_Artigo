@@ -313,8 +313,8 @@
 \renewcommand{\cftchapterpagefont}{\bfseries}
 
 % Configuração de profundidade do sumário (até 3 níveis)
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
 
 % ========================================================================
 % CONFIGURAÇÕES DE CITAÇÕES E REFERÊNCIAS
@@ -472,16 +472,17 @@
 \setlength{\@fpbot}{0pt}
 \makeatother
 
-% Definição do ambiente 'quadro'
+% Definição do ambiente 'quadro' (ABNT NBR 14724:2024 / Manual IFPI)
 \DeclareFloatingEnvironment[
-    fileext=lof,
+    fileext=loq,
     name=Quadro,
-    listname={Lista de Quadros},
+    listname={LISTA DE QUADROS},
     placement=htbp
 ]{quadro}
 \floatname{quadro}{Quadro}
 \renewcommand{\quadroname}{Quadro}
 \providecommand{\cftquadroname}{\quadroname}
+\providecommand{\listofquadroname}{LISTA DE QUADROS}
 \makeatletter
 \@ifundefined{cftquadronumwidth}{\newlength{\cftquadronumwidth}}{}%
 \@ifundefined{cftquadroindent}{\newlength{\cftquadroindent}}{}%
@@ -582,11 +583,17 @@
 \renewcommand{\ABNTEXsubsubsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
-% Configuração de títulos de seções quaternárias (Quaternárias: Caixa Baixa, Sem Negrito)
-\setparaheadstyle{\normalfont\normalsize}
+% Configuração de títulos de seções quaternárias (Quaternárias: Caixa Baixa, Itálico)
+\renewcommand{\ABNTEXparagraphfont}{\itshape}
+\renewcommand{\ABNTEXparagraphfontsize}{\normalsize}
+\setparaheadstyle{\itshape\normalsize}
+\setafterparaskip{1ex plus 0.2ex}
 
-% Configuração de títulos de seções quinárias (Quinárias: Caixa Baixa, Itálico)
-\setsubparaheadstyle{\itshape\normalsize}
+% Configuração de títulos de seções quinárias (Quinárias: Caixa Baixa, Regular/Sem Negrito/Sem Itálico)
+\renewcommand{\ABNTEXsubparagraphfont}{\normalfont}
+\renewcommand{\ABNTEXsubparagraphfontsize}{\normalsize}
+\setsubparaheadstyle{\normalfont\normalsize}
+\setaftersubparaskip{1ex plus 0.2ex}
 
 % Forçar automaticamente a capitalização correta para as seções na compilação
 \usepackage{expl3}
@@ -682,6 +689,7 @@
   \renewcommand{\abstractname}{\bfseries\MakeUppercase{Abstract}}%
   \renewcommand{\listfigurename}{\bfseries\MakeUppercase{Lista de Ilustrações}}%
   \renewcommand{\listtablename}{\bfseries\MakeUppercase{Lista de Tabelas}}%
+  \renewcommand{\listofquadroname}{\bfseries\MakeUppercase{Lista de Quadros}}%
   \renewcommand{\contentsname}{\bfseries\MakeUppercase{Sumário}}%
   \renewcommand{\bibname}{\bfseries\MakeUppercase{Referências}}%
 }
@@ -689,6 +697,7 @@
   \renewcommand{\abstractname}{\bfseries\MakeUppercase{Abstract}}%
   \renewcommand{\listfigurename}{\bfseries\MakeUppercase{List of Illustrations}}%
   \renewcommand{\listtablename}{\bfseries\MakeUppercase{List of Tables}}%
+  \renewcommand{\listofquadroname}{\bfseries\MakeUppercase{List of Frames}}%
   \renewcommand{\contentsname}{\bfseries\MakeUppercase{Contents}}%
   \renewcommand{\bibname}{\bfseries\MakeUppercase{References}}%
 }

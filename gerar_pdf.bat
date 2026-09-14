@@ -11,6 +11,13 @@ pdflatex -interaction=nonstopmode artigo.tex
 pdflatex -interaction=nonstopmode artigo.tex
 
 echo ==========================================================
+rem Limpeza de arquivos temporários e auxiliares gerados pelo LaTeX
+echo  Limpando arquivos temporários de compilação...
+del /q /f *.aux *.bbl *.blg *.brf *.idx *.ilg *.ind *.lof *.log *.lol *.lot *.loq *.out *.toc *.synctex* *.fdb_latexmk *.fls *.bcf *.run.xml 2>nul
+del /q /f config\*.aux config\*.log config\*.fls config\*.fdb_latexmk 2>nul
+del /q /f estrutura\*.aux estrutura\*.log 2>nul
+echo ==========================================================
+
 rem Verifica se a compilação gerou o artigo.pdf com sucesso
 if exist artigo.pdf (
     echo ✅ Sucesso! O PDF foi gerado como artigo.pdf
@@ -19,3 +26,4 @@ if exist artigo.pdf (
 )
 echo ==========================================================
 pause
+
